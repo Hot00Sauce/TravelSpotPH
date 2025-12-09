@@ -443,12 +443,12 @@ footer {
     .checkbtn {
         display: block;
     }
-    
+
     nav {
         flex-wrap: wrap;
         padding: 15px 20px;
     }
-    
+
     nav ul {
         position: fixed;
         width: 100%;
@@ -463,18 +463,18 @@ footer {
         padding-top: 40px;
         gap: 0;
     }
-    
+
     nav ul li {
         margin: 15px 0;
         width: 100%;
     }
-    
+
     nav ul li a {
         font-size: 18px;
         display: block;
         padding: 12px 20px;
     }
-    
+
     .profile-dropdown .dropdown-menu {
         position: static;
         opacity: 1;
@@ -484,39 +484,41 @@ footer {
         box-shadow: none;
         background: rgba(255, 255, 255, 0.1);
     }
-    
+
     .profile-dropdown .dropdown-menu a {
         color: white;
         padding: 10px 20px;
     }
-    
+
     .profile-dropdown .dropdown-menu a:hover {
         background: rgba(255, 255, 255, 0.2);
     }
-    
+
     .profile-dropdown .dropdown-menu a i {
         color: white;
     }
-    
+
     .profile-link i.fa-chevron-down {
         display: none;
     }
-    
-    #check:checked ~ ul {
+
+    #check:checked~ul {
         left: 0;
     }
-    
+
     .searchbox {
         width: 100%;
         max-width: 400px;
         margin: 10px 0 0 0;
     }
-    
+
     .searchbox input {
         width: 100%;
         flex: 1;
     }
-}@media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .palawanImg {
         height: 400px;
     }

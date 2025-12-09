@@ -6,17 +6,17 @@ function checkAuth() {
         const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
         const userStr = localStorage.getItem('user');
         const user = userStr ? JSON.parse(userStr) : null;
-        
+
         // Validate user object has required fields
         if (isLoggedIn && user && user.id && user.username && user.email) {
             return { isLoggedIn: true, user };
         }
-        
+
         // Clear invalid session data
         if (isLoggedIn && !user) {
             localStorage.removeItem('isLoggedIn');
         }
-        
+
         return { isLoggedIn: false, user: null };
     } catch (error) {
         console.error('Auth check error:', error);

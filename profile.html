@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile - TravelSpot PH</title>
     <link rel="icon" type="image/png" href="img/TravelSpotPH1.png">
-    
+
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#2a5298">
@@ -17,7 +18,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/img/TravelSpotPH1.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/img/TravelSpotPH1.png">
     <link rel="apple-touch-icon" sizes="167x167" href="/img/TravelSpotPH1.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="css/profile.css">
     <script src="js/auth.js" defer></script>
     <!--Google fonts-->
@@ -25,304 +26,308 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<!--Header-->
-<div class="header">
-    <header>
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn"> 
-                <i class="fas fa-bars"></i>
-            </label>
-            <a href="index.html" class="logo-link">
-              <img src="img/TravelSpotPH2.png" alt="TravelSpot PH" class="logo-img">
-            </a>
-            <form class="searchbox" method="GET" action="search.html">
-                <input type="text" placeholder="Search" name="search">
-                <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
-            </form>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="travel.html">Travel</a></li>
-                <li><a href="aboutus.html">About us</a></li>
-                <li id="auth-menu">
-                    <a href="signup.html">Log in / Sign up</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-</div>
-
-<!--Profile Content-->
-<div class="profile-container">
-    <div class="profile-header">
-        <div class="profile-avatar">
-            <i class="fas fa-user-circle"></i>
-        </div>
-        <h1 id="welcomeMessage">Welcome!</h1>
-        <p>Manage your account settings</p>
+    <!--Header-->
+    <div class="header">
+        <header>
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="index.html" class="logo-link">
+                    <img src="img/TravelSpotPH2.png" alt="TravelSpot PH" class="logo-img">
+                </a>
+                <form class="searchbox" method="GET" action="search.html">
+                    <input type="text" placeholder="Search" name="search">
+                    <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
+                </form>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="travel.html">Travel</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
+                    <li id="auth-menu">
+                        <a href="signup.html">Log in / Sign up</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     </div>
 
-    <div class="profile-content">
-        <div class="profile-card">
-            <h2><i class="fas fa-info-circle"></i> Account Information</h2>
-            <div class="info-group">
-                <label>User ID:</label>
-                <span id="userId">-</span>
+    <!--Profile Content-->
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <i class="fas fa-user-circle"></i>
             </div>
-            <div class="info-group">
-                <label>Username:</label>
-                <span id="username">-</span>
-            </div>
-            <div class="info-group">
-                <label>Email:</label>
-                <span id="userEmail">-</span>
-            </div>
-            <button onclick="showEditModal()" class="btn-edit">
-                <i class="fas fa-edit"></i> Edit Profile
-            </button>
+            <h1 id="welcomeMessage">Welcome!</h1>
+            <p>Manage your account settings</p>
         </div>
 
-        <div class="profile-card danger-zone">
-            <h2><i class="fas fa-sign-out-alt"></i> Quick Actions</h2>
-            <button onclick="logout()" class="btn-logout">
-                <i class="fas fa-sign-out-alt"></i> Logout
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- Edit Profile Modal -->
-<div id="editModal" class="modal" style="display: none;">
-    <div class="modal-content edit">
-        <span class="close" onclick="closeModal('editModal')">&times;</span>
-        <div class="modal-header">
-            <i class="fas fa-user-edit"></i>
-            <h2>Edit Profile</h2>
-        </div>
-        <form id="editProfileForm">
-            <div class="input-group">
-                <label>Username</label>
-                <input type="text" id="editUsername" required>
-            </div>
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" id="editEmail" required>
-            </div>
-            <div class="input-group">
-                <label>New Password (leave blank to keep current)</label>
-                <input type="password" id="editPassword" placeholder="Leave blank to keep current password">
-            </div>
-            <div class="modal-actions">
-                <button type="button" class="btn-cancel" onclick="closeModal('editModal')">Cancel</button>
-                <button type="submit" class="btn-save">
-                    <i class="fas fa-save"></i> Save Changes
+        <div class="profile-content">
+            <div class="profile-card">
+                <h2><i class="fas fa-info-circle"></i> Account Information</h2>
+                <div class="info-group">
+                    <label>User ID:</label>
+                    <span id="userId">-</span>
+                </div>
+                <div class="info-group">
+                    <label>Username:</label>
+                    <span id="username">-</span>
+                </div>
+                <div class="info-group">
+                    <label>Email:</label>
+                    <span id="userEmail">-</span>
+                </div>
+                <button onclick="showEditModal()" class="btn-edit">
+                    <i class="fas fa-edit"></i> Edit Profile
                 </button>
             </div>
-        </form>
-    </div>
-</div>
 
-<!-- Success Modal -->
-<div id="successModal" class="modal" style="display: none;">
-    <div class="modal-content success">
-        <span class="close" onclick="closeModal('successModal')">&times;</span>
-        <div class="modal-icon">✓</div>
-        <h2>Success!</h2>
-        <p id="successMessage"></p>
-    </div>
-</div>
-
-<!-- Error Modal -->
-<div id="errorModal" class="modal" style="display: none;">
-    <div class="modal-content error">
-        <span class="close" onclick="closeModal('errorModal')">&times;</span>
-        <div class="modal-icon">✕</div>
-        <h2>Error!</h2>
-        <p id="errorMessage"></p>
-    </div>
-</div>
-
-<!--Footer-->
-<footer>
-    <div class="primaryContent">
-        <div class="left area">
-            <div class="AboutUs">
-                <h3>About Us</h3>
-            </div>
-            <div class="content">
-                <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful destinations. We provide comprehensive travel guides and insider tips to help you discover the best of what our islands have to offer.</p>
-                <div class="social">
-                    <a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a>
-                    <a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a>
-                    <a href="https://twitter.com/"><span class="fab fa-twitter"></span></a>
-                    <a href="https://www.youtube.com/"><span class="fab fa-youtube"></span></a>
-                </div>
+            <div class="profile-card danger-zone">
+                <h2><i class="fas fa-sign-out-alt"></i> Quick Actions</h2>
+                <button onclick="logout()" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
             </div>
         </div>
+    </div>
 
-        <div class="center area">
-            <h3>Address</h3>
-            <div class="content">
-                <div class="place">
-                    <span class="fas fa-map-marker-alt"></span>
-                    <span class="Atext">Muntinlupa City, Metro Manila</span>
+    <!-- Edit Profile Modal -->
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content edit">
+            <span class="close" onclick="closeModal('editModal')">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-user-edit"></i>
+                <h2>Edit Profile</h2>
+            </div>
+            <form id="editProfileForm">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="editUsername" required>
                 </div>
-                <div class="number">
-                    <span class="fas fa-phone-alt"></span>
-                    <span class="Atext">09572423121</span>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="editEmail" required>
                 </div>
-                <div class="email">
-                    <span class="fas fa-envelope"></span>
-                    <span class="Atext">TravelSpotPH@gmail.com</span>
+                <div class="input-group">
+                    <label>New Password (leave blank to keep current)</label>
+                    <input type="password" id="editPassword" placeholder="Leave blank to keep current password">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel" onclick="closeModal('editModal')">Cancel</button>
+                    <button type="submit" class="btn-save">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal" style="display: none;">
+        <div class="modal-content success">
+            <span class="close" onclick="closeModal('successModal')">&times;</span>
+            <div class="modal-icon">✓</div>
+            <h2>Success!</h2>
+            <p id="successMessage"></p>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal" style="display: none;">
+        <div class="modal-content error">
+            <span class="close" onclick="closeModal('errorModal')">&times;</span>
+            <div class="modal-icon">✕</div>
+            <h2>Error!</h2>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <div class="primaryContent">
+            <div class="left area">
+                <div class="AboutUs">
+                    <h3>About Us</h3>
+                </div>
+                <div class="content">
+                    <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful
+                        destinations. We provide comprehensive travel guides and insider tips to help you discover the
+                        best of what our islands have to offer.</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a>
+                        <a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a>
+                        <a href="https://twitter.com/"><span class="fab fa-twitter"></span></a>
+                        <a href="https://www.youtube.com/"><span class="fab fa-youtube"></span></a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="right area">
-            <h3>Contact Us</h3>
-            <div class="content">
-                <form action="#">
+            <div class="center area">
+                <h3>Address</h3>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="Atext">Muntinlupa City, Metro Manila</span>
+                    </div>
+                    <div class="number">
+                        <span class="fas fa-phone-alt"></span>
+                        <span class="Atext">09572423121</span>
+                    </div>
                     <div class="email">
-                        <div class="Atext">Email*</div>
-                        <input type="email" required>
+                        <span class="fas fa-envelope"></span>
+                        <span class="Atext">TravelSpotPH@gmail.com</span>
                     </div>
-                    <div class="message">
-                        <div class="Atext">Message*</div>
-                        <textarea cols="25" rows="2" required></textarea>
-                    </div>
-                    <div class="btn">
-                        <button type="submit">Send</button>
-                    </div>
-                </form>
+                </div>
+            </div>
+
+            <div class="right area">
+                <h3>Contact Us</h3>
+                <div class="content">
+                    <form action="#">
+                        <div class="email">
+                            <div class="Atext">Email*</div>
+                            <input type="email" required>
+                        </div>
+                        <div class="message">
+                            <div class="Atext">Message*</div>
+                            <textarea cols="25" rows="2" required></textarea>
+                        </div>
+                        <div class="btn">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="bottom">
-        <center>
-            <span class="title"><a href="#">TravelSpotPH</a> | </span>
-            <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
-        </center>
-    </div>
-</footer>
+        <div class="bottom">
+            <center>
+                <span class="title"><a href="#">TravelSpotPH</a> | </span>
+                <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+            </center>
+        </div>
+    </footer>
 
-<script>
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-}
+    <script>
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-    }
-}
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
 
-// Auto-close success modal after 3 seconds
-function showModal(modalId, message) {
-    document.getElementById(modalId.includes('success') ? 'successMessage' : 'errorMessage').textContent = message;
-    document.getElementById(modalId).style.display = 'block';
-    
-    if (modalId === 'successModal') {
-        setTimeout(() => {
-            closeModal(modalId);
-        }, 3000);
-    }
-}
+        // Auto-close success modal after 3 seconds
+        function showModal(modalId, message) {
+            document.getElementById(modalId.includes('success') ? 'successMessage' : 'errorMessage').textContent = message;
+            document.getElementById(modalId).style.display = 'block';
 
-// Show edit modal with current user data
-function showEditModal() {
-    const user = JSON.parse(localStorage.getItem('user') || 'null');
-    if (!user) return;
+            if (modalId === 'successModal') {
+                setTimeout(() => {
+                    closeModal(modalId);
+                }, 3000);
+            }
+        }
 
-    document.getElementById('editUsername').value = user.username;
-    document.getElementById('editEmail').value = user.email;
-    document.getElementById('editPassword').value = '';
-    document.getElementById('editModal').style.display = 'block';
-}
+        // Show edit modal with current user data
+        function showEditModal() {
+            const user = JSON.parse(localStorage.getItem('user') || 'null');
+            if (!user) return;
 
-// Handle edit profile form submission
-document.getElementById('editProfileForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+            document.getElementById('editUsername').value = user.username;
+            document.getElementById('editEmail').value = user.email;
+            document.getElementById('editPassword').value = '';
+            document.getElementById('editModal').style.display = 'block';
+        }
 
-    const user = JSON.parse(localStorage.getItem('user') || 'null');
-    if (!user) return;
+        // Handle edit profile form submission
+        document.getElementById('editProfileForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
 
-    const submitBtn = e.target.querySelector('.btn-save');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+            const user = JSON.parse(localStorage.getItem('user') || 'null');
+            if (!user) return;
 
-    const updatedData = {
-        userId: user.id,
-        username: document.getElementById('editUsername').value,
-        email: document.getElementById('editEmail').value
-    };
+            const submitBtn = e.target.querySelector('.btn-save');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
 
-    const newPassword = document.getElementById('editPassword').value;
-    if (newPassword) {
-        updatedData.password = newPassword;
-    }
+            const updatedData = {
+                userId: user.id,
+                username: document.getElementById('editUsername').value,
+                email: document.getElementById('editEmail').value
+            };
 
-    try {
-        const response = await fetch('/api/update-profile', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(updatedData)
+            const newPassword = document.getElementById('editPassword').value;
+            if (newPassword) {
+                updatedData.password = newPassword;
+            }
+
+            try {
+                const response = await fetch('/api/update-profile', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(updatedData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    // Update localStorage
+                    const updatedUser = {
+                        id: user.id,
+                        username: updatedData.username,
+                        email: updatedData.email
+                    };
+                    localStorage.setItem('user', JSON.stringify(updatedUser));
+
+                    // Close edit modal and show success
+                    closeModal('editModal');
+                    showModal('successModal', 'Profile updated successfully!');
+
+                    // Reload profile
+                    loadProfile();
+                } else {
+                    showModal('errorModal', data.error || 'Failed to update profile. Please try again.');
+                }
+            } catch (error) {
+                console.error('Update error:', error);
+                showModal('errorModal', 'Network error. Please check your connection and try again.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-save"></i> Save Changes';
+            }
         });
 
-        const data = await response.json();
+        // Check if user is logged in and load profile
+        function loadProfile() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const user = JSON.parse(localStorage.getItem('user') || 'null');
 
-        if (response.ok && data.success) {
-            // Update localStorage
-            const updatedUser = {
-                id: user.id,
-                username: updatedData.username,
-                email: updatedData.email
-            };
-            localStorage.setItem('user', JSON.stringify(updatedUser));
+            if (!isLoggedIn || !user) {
+                // Redirect to login if not logged in
+                window.location.href = 'login.html';
+                return;
+            }
 
-            // Close edit modal and show success
-            closeModal('editModal');
-            showModal('successModal', 'Profile updated successfully!');
-            
-            // Reload profile
-            loadProfile();
-        } else {
-            showModal('errorModal', data.error || 'Failed to update profile. Please try again.');
+            // Display user information
+            document.getElementById('welcomeMessage').textContent = `Welcome, ${user.username}!`;
+            document.getElementById('userId').textContent = user.id || 'N/A';
+            document.getElementById('username').textContent = user.username;
+            document.getElementById('userEmail').textContent = user.email;
         }
-    } catch (error) {
-        console.error('Update error:', error);
-        showModal('errorModal', 'Network error. Please check your connection and try again.');
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fas fa-save"></i> Save Changes';
-    }
-});
 
-// Check if user is logged in and load profile
-function loadProfile() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    const user = JSON.parse(localStorage.getItem('user') || 'null');
-
-    if (!isLoggedIn || !user) {
-        // Redirect to login if not logged in
-        window.location.href = 'login.html';
-        return;
-    }
-
-    // Display user information
-    document.getElementById('welcomeMessage').textContent = `Welcome, ${user.username}!`;
-    document.getElementById('userId').textContent = user.id || 'N/A';
-    document.getElementById('username').textContent = user.username;
-    document.getElementById('userEmail').textContent = user.email;
-}
-
-// Load profile on page load
-loadProfile();
-</script>
+        // Load profile on page load
+        loadProfile();
+    </script>
 
 </body>
+
 </html>

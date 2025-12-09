@@ -26,9 +26,9 @@ module.exports = async (req, res) => {
         const { userId, username, email, password } = req.body;
 
         if (!userId || !username || !email) {
-            return res.status(400).json({ 
-                success: false, 
-                error: 'User ID, username, and email are required' 
+            return res.status(400).json({
+                success: false,
+                error: 'User ID, username, and email are required'
             });
         }
 
@@ -37,15 +37,15 @@ module.exports = async (req, res) => {
         const users = database.collection('users');
 
         // Check if email is already taken by another user
-        const existingUser = await users.findOne({ 
+        const existingUser = await users.findOne({
             email: email,
             _id: { $ne: new ObjectId(userId) }
         });
 
         if (existingUser) {
-            return res.status(400).json({ 
-                success: false, 
-                error: 'Email already in use by another account' 
+            return res.status(400).json({
+                success: false,
+                error: 'Email already in use by another account'
             });
         }
 
@@ -67,22 +67,22 @@ module.exports = async (req, res) => {
         );
 
         if (result.matchedCount === 0) {
-            return res.status(404).json({ 
-                success: false, 
-                error: 'User not found' 
+            return res.status(404).json({
+                success: false,
+                error: 'User not found'
             });
         }
 
-        res.status(200).json({ 
-            success: true, 
+        res.status(200).json({
+            success: true,
             message: 'Profile updated successfully'
         });
 
     } catch (error) {
         console.error('Update profile error:', error);
-        res.status(500).json({ 
-            success: false, 
-            error: 'Failed to update profile' 
+        res.status(500).json({
+            success: false,
+            error: 'Failed to update profile'
         });
     } finally {
         await client.close();
