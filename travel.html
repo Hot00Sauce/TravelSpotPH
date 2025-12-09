@@ -1,103 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelSpot PH - Travel Destinations</title>
-    <link rel="icon" type="image/png" href="img/TravelSpotPH1.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <link rel="stylesheet" href="css/travel.css">
-    <script src="js/auth.js" defer></script>
-        <!--Google fonts-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelSpot PH - Travel Destinations</title>
+  <link rel="icon" type="image/png" href="img/TravelSpotPH1.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/travel.css">
+  <script src="js/auth.js" defer></script>
+  <!--Google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<!--Header-->
-<div class="header">
+  <!--Header-->
+  <div class="header">
     <header>
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn"> 
-                <i class="fas fa-bars"></i>
-            </label>
-            <a href="index.html" class="logo-link">
-              <img src="img/TravelSpotPH2.png" alt="TravelSpot PH" class="logo-img">
-            </a>
-            <form class="searchbox" method="GET" action="search.html">
-                <input type="text" placeholder="Search" name="search">
-                <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
-            </form>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="travel.html">Travel</a></li>
-                <li><a href="aboutus.html">About us</a></li>
-                <li id="auth-menu">
-                    <a href="signup.html">Log in / Sign up</a>
-                </li>
-            </ul>
-        </nav>
+      <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <a href="index.html" class="logo-link">
+          <img src="img/TravelSpotPH2.png" alt="TravelSpot PH" class="logo-img">
+        </a>
+        <form class="searchbox" method="GET" action="search.html">
+          <input type="text" placeholder="Search" name="search">
+          <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
+        </form>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="travel.html">Travel</a></li>
+          <li><a href="aboutus.html">About us</a></li>
+          <li id="auth-menu">
+            <a href="signup.html">Log in / Sign up</a>
+          </li>
+        </ul>
+      </nav>
     </header>
- </div>
+  </div>
 
-<!--Content of travel website-->
-<div class="images">
-  <div class="destination-card">
-    <a href="palawan.html" class="image-link">
-      <img src="img/Palawan.jpg" alt="beautiful image of Palawan">
-      <div class="overlay">
-        <span>Explore!</span>
-      </div>
-    </a>
-    <div class="text">Palawan</div>
+  <!--Content of travel website-->
+  <div class="images">
+    <div class="destination-card">
+      <a href="palawan.html" class="image-link">
+        <img src="img/Palawan.jpg" alt="beautiful image of Palawan">
+        <div class="overlay">
+          <span>Explore!</span>
+        </div>
+      </a>
+      <div class="text">Palawan</div>
+    </div>
+
+    <div class="destination-card">
+      <a href="boracay.html" class="image-link">
+        <img src="img/Boracay.jpg" alt="birds eye view picture with three people swimming in Boracay beach">
+        <div class="overlay">
+          <span>Explore!</span>
+        </div>
+      </a>
+      <div class="text">Boracay</div>
+    </div>
+
+    <div class="destination-card">
+      <a href="bohol.html" class="image-link">
+        <img src="img/Bohol.jpg" alt="image of green Chocolate hills">
+        <div class="overlay">
+          <span>Explore!</span>
+        </div>
+      </a>
+      <div class="text">Bohol</div>
+    </div>
+
+    <div class="destination-card">
+      <a href="siargao.html" class="image-link">
+        <img src="img/Siargao.jpg" alt="birds eye view picture of an island in Siargao, with many boats">
+        <div class="overlay">
+          <span>Explore!</span>
+        </div>
+      </a>
+      <div class="text">Siargao</div>
+    </div>
+
+    <div class="destination-card">
+      <a href="baguio.html" class="image-link">
+        <img src="img/Baguio.jpg" alt="smoky village in Baguio">
+        <div class="overlay">
+          <span>Explore!</span>
+        </div>
+      </a>
+      <div class="text">Baguio</div>
+    </div>
   </div>
-  
-  <div class="destination-card">
-    <a href="boracay.html" class="image-link">
-      <img src="img/Boracay.jpg" alt="birds eye view picture with three people swimming in Boracay beach">
-      <div class="overlay">
-        <span>Explore!</span>
-      </div>
-    </a>
-    <div class="text">Boracay</div>
-  </div>
-  
-  <div class="destination-card">
-    <a href="bohol.html" class="image-link">
-      <img src="img/Bohol.jpg" alt="image of green Chocolate hills">
-      <div class="overlay">
-        <span>Explore!</span>
-      </div>
-    </a>
-    <div class="text">Bohol</div>
-  </div>
-  
-  <div class="destination-card">
-    <a href="siargao.html" class="image-link">
-      <img src="img/Siargao.jpg" alt="birds eye view picture of an island in Siargao, with many boats">
-      <div class="overlay">
-        <span>Explore!</span>
-      </div>
-    </a>
-    <div class="text">Siargao</div>
-  </div>
-  
-  <div class="destination-card">
-    <a href="baguio.html" class="image-link">
-      <img src="img/Baguio.jpg" alt="smoky village in Baguio">
-      <div class="overlay">
-        <span>Explore!</span>
-      </div>
-    </a>
-    <div class="text">Baguio</div>
-  </div>
-</div>
 
 
-<!--Footer of the website-->
-<footer>
+  <!--Footer of the website-->
+  <footer>
     <!--The left spart of the footer (About us)-->
     <div class="primaryContent">
       <div class="left area">
@@ -105,7 +107,9 @@
           <h3>About Us</h3>
         </div>
         <div class="content">
-          <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful destinations. We provide comprehensive travel guides and insider tips to help you discover the best of what our islands have to offer.</p>
+          <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful destinations. We
+            provide comprehensive travel guides and insider tips to help you discover the best of what our islands have
+            to offer.</p>
           <div class="social">
             <a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a>
             <a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a>
@@ -166,4 +170,5 @@
 </html>
 
 </body>
+
 </html>

@@ -2,283 +2,285 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Spot</title>
-  <link rel="icon" type="image/png" href="img/TravelSpotPH1.png">
-  <link rel="stylesheet" href="css/home.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script src="js/home.js" defer></script>
-  <script src="js/auth.js" defer></script>
-  <!--Google fonts-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Spot</title>
+    <link rel="icon" type="image/png" href="img/TravelSpotPH1.png">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="js/home.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!--Header-->
-  <div class="header">
-    <header>
-      <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
-        </label>
-        <a href="index.html" class="logo-link">
-          <img src="img/TravelSpotPH2.png" alt="TravelSpot PH" class="logo-img">
-        </a>
-        <form class="searchbox" method="GET" action="search.html">
-          <input type="text" placeholder="Search" name="search">
-          <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
-        </form>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="travel.html">Travel</a></li>
-          <li><a href="aboutus.html">About us</a></li>
-          <li id="auth-menu">
-            <a href="signup.html">Log in / Sign up</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  </div>
-
-  <div class="slideshow-container">
-
-    <div class="mySlides fade">
-    <a href="palawan.html"><img src="img/Palawan.jpg" style="width:100%"></a>
-      <div class="text">Palawan</div>
+    <!--Header-->
+    <div class="header">
+        <header>
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="index.html" class="logo-link">
+                    <img src="img/TravelSpotPH2.png" alt="TravelSpot PH" class="logo-img">
+                </a>
+                <form class="searchbox" method="GET" action="search.html">
+                    <input type="text" placeholder="Search" name="search">
+                    <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
+                </form>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="travel.html">Travel</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
+                    <li id="auth-menu">
+                        <a href="signup.html">Log in / Sign up</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     </div>
 
-    <div class="mySlides fade">
-    <a href="boracay.html"><img src="img/Boracay.jpg" style="width:100%"></a>
-      <div class="text">Boracay</div>
-    </div>
+    <div class="slideshow-container">
 
-    <div class="mySlides fade">
-    <a href="bohol.html"><img src="img/Bohol.jpg" style="width:100%"></a>
-      <div class="text">Bohol</div>
-    </div>
-
-    <div class="mySlides fade">
-    <a href="siargao.html"><img src="img/Siargao.jpg" style="width:100%"></a>
-      <div class="text">Siargao</div>
-    </div>
-
-    <div class="mySlides fade">
-    <a href="baguio.html"><img src="img/Baguio.jpg" style="width:100%"></a>
-      <div class="text">Baguio</div>
-    </div>
-
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlide(1)">❯</a>
-
-    <!-- Position the dot container at the bottom center -->
-    <div class="dot-container" style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-      <span class="dot" onclick="currentSlide(4)"></span>
-      <span class="dot" onclick="currentSlide(5)"></span>
-    </div>
-
-  </div>
-
-  <!-- Featured Attractions Section -->
-  <div class="featured-attractions">
-    <h2 class="section-title">Discover Amazing Attractions</h2>
-    <p class="section-subtitle">Explore these handpicked destinations from across the Philippines</p>
-    
-    <div class="attractions-grid" id="attractions-container">
-      <!-- Attractions will be loaded dynamically -->
-    </div>
-  </div>
-
-  <!--Footer of the website-->
-  <footer>
-    <!--The left spart of the footer (About us)-->
-    <div class="primaryContent">
-      <div class="left area">
-        <div class="AboutUs">
-          <h3>About Us</h3>
+        <div class="mySlides fade">
+            <a href="palawan.html"><img src="img/Palawan.jpg" style="width:100%"></a>
+            <div class="text">Palawan</div>
         </div>
-        <div class="content">
-          <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful destinations. We provide comprehensive travel guides and insider tips to help you discover the best of what our islands have to offer.</p>
-          <div class="social">
-            <a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a>
-            <a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a>
-            <a href="https://twitter.com/"><span class="fab fa-twitter"></span></a>
-            <a href="https://www.youtube.com/"><span class="fab fa-youtube"></span></a>
-          </div>
-        </div>
-      </div>
-      <!--This is the center part of the footer (Address)-->
-      <div class="center area">
-        <h3>Address</h3>
-        <div class="content">
-          <div class="place">
-            <span class="fas fa-map-marker-alt"></span>
-            <span class="Atext">Muntinlupa City, Metro Manila</span>
-          </div>
-          <div class="number">
-            <span class="fas fa-phone-alt"></span>
-            <span class="Atext">09572423121</span>
-          </div>
-          <div class="email">
-            <span class="fas fa-envelope"></span>
-            <span class="Atext">TravelSpotPH@gmail.com</span>
-          </div>
-        </div>
-      </div>
 
-      <!--The right part of the footer (Contact Us)-->
-      <div class="right area">
-        <h3>Contact Us</h3>
-        <div class="content">
-          <form action="#">
-            <div class="email">
-              <div class="Atext">Email*</div>
-              <input type="email" required>
+        <div class="mySlides fade">
+            <a href="boracay.html"><img src="img/Boracay.jpg" style="width:100%"></a>
+            <div class="text">Boracay</div>
+        </div>
+
+        <div class="mySlides fade">
+            <a href="bohol.html"><img src="img/Bohol.jpg" style="width:100%"></a>
+            <div class="text">Bohol</div>
+        </div>
+
+        <div class="mySlides fade">
+            <a href="siargao.html"><img src="img/Siargao.jpg" style="width:100%"></a>
+            <div class="text">Siargao</div>
+        </div>
+
+        <div class="mySlides fade">
+            <a href="baguio.html"><img src="img/Baguio.jpg" style="width:100%"></a>
+            <div class="text">Baguio</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlide(1)">❯</a>
+
+        <!-- Position the dot container at the bottom center -->
+        <div class="dot-container" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+    </div>
+
+    <!-- Featured Attractions Section -->
+    <div class="featured-attractions">
+        <h2 class="section-title">Discover Amazing Attractions</h2>
+        <p class="section-subtitle">Explore these handpicked destinations from across the Philippines</p>
+
+        <div class="attractions-grid" id="attractions-container">
+            <!-- Attractions will be loaded dynamically -->
+        </div>
+    </div>
+
+    <!--Footer of the website-->
+    <footer>
+        <!--The left spart of the footer (About us)-->
+        <div class="primaryContent">
+            <div class="left area">
+                <div class="AboutUs">
+                    <h3>About Us</h3>
+                </div>
+                <div class="content">
+                    <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful
+                        destinations. We provide comprehensive travel guides and insider tips to help you discover the
+                        best of what our islands have to offer.</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a>
+                        <a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a>
+                        <a href="https://twitter.com/"><span class="fab fa-twitter"></span></a>
+                        <a href="https://www.youtube.com/"><span class="fab fa-youtube"></span></a>
+                    </div>
+                </div>
             </div>
-            <div class="message">
-              <div class="Atext">Message*</div>
-              <textarea cols="25" rows="2" required></textarea>
+            <!--This is the center part of the footer (Address)-->
+            <div class="center area">
+                <h3>Address</h3>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="Atext">Muntinlupa City, Metro Manila</span>
+                    </div>
+                    <div class="number">
+                        <span class="fas fa-phone-alt"></span>
+                        <span class="Atext">09572423121</span>
+                    </div>
+                    <div class="email">
+                        <span class="fas fa-envelope"></span>
+                        <span class="Atext">TravelSpotPH@gmail.com</span>
+                    </div>
+                </div>
             </div>
-            <div class="btn">
-              <button type="submit">Send</button>
+
+            <!--The right part of the footer (Contact Us)-->
+            <div class="right area">
+                <h3>Contact Us</h3>
+                <div class="content">
+                    <form action="#">
+                        <div class="email">
+                            <div class="Atext">Email*</div>
+                            <input type="email" required>
+                        </div>
+                        <div class="message">
+                            <div class="Atext">Message*</div>
+                            <textarea cols="25" rows="2" required></textarea>
+                        </div>
+                        <div class="btn">
+                            <button type="submit">Send</button>
+                        </div>
+                </div>
+                </form>
             </div>
         </div>
-        </form>
-      </div>
-    </div>
-    <!--The credits-->
-    <div class="bottom">
-      <center>
-        <span class="title"><a href="#">TravelSpotPH</a> | </span>
-        <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
-      </center>
-    </div>
-  </footer>
+        <!--The credits-->
+        <div class="bottom">
+            <center>
+                <span class="title"><a href="#">TravelSpotPH</a> | </span>
+                <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+            </center>
+        </div>
+    </footer>
 
-  <script>
-    // Load attractions dynamically
-    const attractions = [
-      {
-        name: 'Underground River',
-        destination: 'Palawan',
-        image: 'img/undergroundriverpal.jpg',
-        description: 'The Puerto Princesa Subterranean River National Park is a stunning natural wonder and UNESCO World Heritage Site. This underground river features a spectacular limestone karst mountain landscape with an 8.2 km navigable river.',
-        link: 'palawan.html'
-      },
-      {
-        name: 'Island Hopping',
-        destination: 'Palawan',
-        image: 'img/islandhopingpal.jpg',
-        description: 'Experience the best of Palawan through island hopping tours. Discover scenic green islands, crystal-clear waters, and pristine white beaches in El Nido, Coron, Puerto Princesa, and San Vicente.',
-        link: 'palawan.html'
-      },
-      {
-        name: 'Calauit Safari Park',
-        destination: 'Palawan',
-        image: 'img/safaripal.jpg',
-        description: 'A unique wildlife sanctuary featuring African and endemic animals. Home to giraffes, zebras, and various Philippine wildlife species in their natural habitat.',
-        link: 'palawan.html'
-      },
-      {
-        name: 'White Beach',
-        destination: 'Boracay',
-        image: 'img/whitebeachbor.jpg',
-        description: "The world-famous White Beach is Boracay's main attraction, featuring powdery white sand and crystal-clear turquoise waters stretching over 4 kilometers. Perfect for swimming, sunbathing, and water sports.",
-        link: 'boracay.html'
-      },
-      {
-        name: 'Bulabog Beach',
-        destination: 'Boracay',
-        image: 'img/bulabogbeachbor.jpg',
-        description: 'Known as the kiteboarding capital of Asia, Bulabog Beach offers strong winds perfect for windsurfing and kitesurfing. A paradise for water sports enthusiasts.',
-        link: 'boracay.html'
-      },
-      {
-        name: "Ariel's Point",
-        destination: 'Boracay',
-        image: 'img/arielspointbor.jpg',
-        description: "One of the world's top cliff diving destinations with platforms ranging from 3 to 15 meters high. Enjoy unlimited drinks, kayaking, snorkeling, and a buffet lunch in this tropical paradise.",
-        link: 'boracay.html'
-      },
-      {
-        name: 'Chocolate Hills',
-        destination: 'Bohol',
-        image: 'img/chocolatehillsboh.jpg',
-        description: "Bohol's most iconic geological wonder featuring over 1,200 conical hills that turn chocolate brown during dry season. A breathtaking natural phenomenon that graces the PHP200 bill.",
-        link: 'bohol.html'
-      },
-      {
-        name: 'Philippine Tarsiers',
-        destination: 'Bohol',
-        image: 'img/tarsiersboh.jpg',
-        description: "Meet the world's smallest primates at the Tarsier Sanctuary. These adorable nocturnal creatures with huge eyes are one of the Philippines' most treasured endemic species.",
-        link: 'bohol.html'
-      },
-      {
-        name: 'Loboc River Cruise',
-        destination: 'Bohol',
-        image: 'img/lobocriverboh.jpg',
-        description: 'Experience a floating restaurant cruise along the scenic Loboc River. Enjoy a buffet of Filipino dishes while being serenaded by local musicians and dancers in traditional attire.',
-        link: 'bohol.html'
-      },
-      {
-        name: 'Cloud 9',
-        destination: 'Siargao',
-        image: 'img/cloudninesiar.jpg',
-        description: 'The legendary surf break that put Siargao on the map. Cloud 9 offers world-class barreling waves perfect for experienced surfers, especially from September to March.',
-        link: 'siargao.html'
-      },
-      {
-        name: 'Naked Island',
-        destination: 'Siargao',
-        image: 'img/nakedislandsia.jpg',
-        description: 'A stunning sandbar with no trees or structures, just pure white sand surrounded by crystal-clear turquoise waters. Perfect for swimming and sunbathing in paradise.',
-        link: 'siargao.html'
-      },
-      {
-        name: 'Sugba Lagoon',
-        destination: 'Siargao',
-        image: 'img/sugbalagoonsia.jpg',
-        description: 'A hidden gem with pristine waters surrounded by lush mangroves and limestone cliffs. Enjoy kayaking, paddleboarding, and cliff jumping in this secluded paradise.',
-        link: 'siargao.html'
-      },
-      {
-        name: 'Burnham Park',
-        destination: 'Baguio',
-        image: 'img/burnampark.jpg',
-        description: 'A 32-hectare urban park in the heart of Baguio featuring a man-made lake, rose garden, orchidarium, and picnic areas. Rent a swan boat for a relaxing afternoon amongst the trees.',
-        link: 'baguio.html'
-      },
-      {
-        name: 'Mines View Park',
-        destination: 'Baguio',
-        image: 'img/mineviewpark.jpg',
-        description: 'Offers breathtaking panoramic views of mountains, forests, and the abandoned Balatoc Mines. Shop for local trinkets and take photos in traditional Igorot attire.',
-        link: 'baguio.html'
-      },
-      {
-        name: 'Strawberry Farm',
-        destination: 'Baguio',
-        image: 'img/strawberryfarm.jpg',
-        description: 'Pick your own fresh strawberries at the famous La Trinidad Strawberry Farm. Enjoy the cool mountain air and taste the sweetest strawberries straight from the farm.',
-        link: 'baguio.html'
-      }
-    ];
+    <script>
+        // Load attractions dynamically
+        const attractions = [
+            {
+                name: 'Underground River',
+                destination: 'Palawan',
+                image: 'img/undergroundriverpal.jpg',
+                description: 'The Puerto Princesa Subterranean River National Park is a stunning natural wonder and UNESCO World Heritage Site. This underground river features a spectacular limestone karst mountain landscape with an 8.2 km navigable river.',
+                link: 'palawan.html'
+            },
+            {
+                name: 'Island Hopping',
+                destination: 'Palawan',
+                image: 'img/islandhopingpal.jpg',
+                description: 'Experience the best of Palawan through island hopping tours. Discover scenic green islands, crystal-clear waters, and pristine white beaches in El Nido, Coron, Puerto Princesa, and San Vicente.',
+                link: 'palawan.html'
+            },
+            {
+                name: 'Calauit Safari Park',
+                destination: 'Palawan',
+                image: 'img/safaripal.jpg',
+                description: 'A unique wildlife sanctuary featuring African and endemic animals. Home to giraffes, zebras, and various Philippine wildlife species in their natural habitat.',
+                link: 'palawan.html'
+            },
+            {
+                name: 'White Beach',
+                destination: 'Boracay',
+                image: 'img/whitebeachbor.jpg',
+                description: "The world-famous White Beach is Boracay's main attraction, featuring powdery white sand and crystal-clear turquoise waters stretching over 4 kilometers. Perfect for swimming, sunbathing, and water sports.",
+                link: 'boracay.html'
+            },
+            {
+                name: 'Bulabog Beach',
+                destination: 'Boracay',
+                image: 'img/bulabogbeachbor.jpg',
+                description: 'Known as the kiteboarding capital of Asia, Bulabog Beach offers strong winds perfect for windsurfing and kitesurfing. A paradise for water sports enthusiasts.',
+                link: 'boracay.html'
+            },
+            {
+                name: "Ariel's Point",
+                destination: 'Boracay',
+                image: 'img/arielspointbor.jpg',
+                description: "One of the world's top cliff diving destinations with platforms ranging from 3 to 15 meters high. Enjoy unlimited drinks, kayaking, snorkeling, and a buffet lunch in this tropical paradise.",
+                link: 'boracay.html'
+            },
+            {
+                name: 'Chocolate Hills',
+                destination: 'Bohol',
+                image: 'img/chocolatehillsboh.jpg',
+                description: "Bohol's most iconic geological wonder featuring over 1,200 conical hills that turn chocolate brown during dry season. A breathtaking natural phenomenon that graces the PHP200 bill.",
+                link: 'bohol.html'
+            },
+            {
+                name: 'Philippine Tarsiers',
+                destination: 'Bohol',
+                image: 'img/tarsiersboh.jpg',
+                description: "Meet the world's smallest primates at the Tarsier Sanctuary. These adorable nocturnal creatures with huge eyes are one of the Philippines' most treasured endemic species.",
+                link: 'bohol.html'
+            },
+            {
+                name: 'Loboc River Cruise',
+                destination: 'Bohol',
+                image: 'img/lobocriverboh.jpg',
+                description: 'Experience a floating restaurant cruise along the scenic Loboc River. Enjoy a buffet of Filipino dishes while being serenaded by local musicians and dancers in traditional attire.',
+                link: 'bohol.html'
+            },
+            {
+                name: 'Cloud 9',
+                destination: 'Siargao',
+                image: 'img/cloudninesiar.jpg',
+                description: 'The legendary surf break that put Siargao on the map. Cloud 9 offers world-class barreling waves perfect for experienced surfers, especially from September to March.',
+                link: 'siargao.html'
+            },
+            {
+                name: 'Naked Island',
+                destination: 'Siargao',
+                image: 'img/nakedislandsia.jpg',
+                description: 'A stunning sandbar with no trees or structures, just pure white sand surrounded by crystal-clear turquoise waters. Perfect for swimming and sunbathing in paradise.',
+                link: 'siargao.html'
+            },
+            {
+                name: 'Sugba Lagoon',
+                destination: 'Siargao',
+                image: 'img/sugbalagoonsia.jpg',
+                description: 'A hidden gem with pristine waters surrounded by lush mangroves and limestone cliffs. Enjoy kayaking, paddleboarding, and cliff jumping in this secluded paradise.',
+                link: 'siargao.html'
+            },
+            {
+                name: 'Burnham Park',
+                destination: 'Baguio',
+                image: 'img/burnampark.jpg',
+                description: 'A 32-hectare urban park in the heart of Baguio featuring a man-made lake, rose garden, orchidarium, and picnic areas. Rent a swan boat for a relaxing afternoon amongst the trees.',
+                link: 'baguio.html'
+            },
+            {
+                name: 'Mines View Park',
+                destination: 'Baguio',
+                image: 'img/mineviewpark.jpg',
+                description: 'Offers breathtaking panoramic views of mountains, forests, and the abandoned Balatoc Mines. Shop for local trinkets and take photos in traditional Igorot attire.',
+                link: 'baguio.html'
+            },
+            {
+                name: 'Strawberry Farm',
+                destination: 'Baguio',
+                image: 'img/strawberryfarm.jpg',
+                description: 'Pick your own fresh strawberries at the famous La Trinidad Strawberry Farm. Enjoy the cool mountain air and taste the sweetest strawberries straight from the farm.',
+                link: 'baguio.html'
+            }
+        ];
 
-    // Shuffle and display 5 random attractions
-    const shuffled = attractions.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 5);
-    const container = document.getElementById('attractions-container');
+        // Shuffle and display 5 random attractions
+        const shuffled = attractions.sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 5);
+        const container = document.getElementById('attractions-container');
 
-    selected.forEach(attraction => {
-      const card = `
+        selected.forEach(attraction => {
+            const card = `
         <div class="attraction-card">
           <a href="${attraction.link}" class="attraction-link">
             <div class="attraction-image">
@@ -293,9 +295,9 @@
           </a>
         </div>
       `;
-      container.innerHTML += card;
-    });
-  </script>
+            container.innerHTML += card;
+        });
+    </script>
 </body>
 
 </html>
