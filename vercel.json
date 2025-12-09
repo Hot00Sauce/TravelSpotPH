@@ -1,8 +1,5 @@
 {
-    "rewrites": [
-        {
-            "source": "/",
-            "destination": "/home.php"
-        }
-    ]
+    "buildCommand": "echo 'Static site - no build needed'",
+    "outputDirectory": ".",
+    "installCommand": "npm install"
 }
