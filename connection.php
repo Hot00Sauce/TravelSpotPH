@@ -16,28 +16,38 @@ if (session_status() === PHP_SESSION_NONE) {
     ini_set('session.use_strict_mode', 1); // Prevent session fixation attacks
 }
 
-// Database Configuration - Auto-detect environment
+// Determine environment
 $environment = getenv('ENVIRONMENT') ?: 'local';
+$mongodbUri = getenv('MONGODB_URI');
 
-if ($environment === 'production') {
-    // Production: Use remote database from environment variables
-    $dbhost = getenv('DB_HOST') ?: 'localhost';
-    $dbuser = getenv('DB_USER') ?: 'root';
-    $dbpass = getenv('DB_PASS') ?: '';
-    $dbname = getenv('DB_NAME') ?: 'regtest';
+if ($environment === 'production' && $mongodbUri) {
+    // Production: Use MongoDB Atlas
+    try {
+        // Use MongoDB driver with simple connection
+        $mongoClient = new MongoDB\Driver\Manager($mongodbUri);
+        $con = $mongoClient;
+        
+        // Test connection
+        $command = new MongoDB\Driver\Command(['ping' => 1]);
+        $mongoClient->executeCommand('admin', $command);
+        
+        // Store in global variable for compatibility
+        $GLOBALS['mongodb'] = $mongoClient;
+        $GLOBALS['isMongoDb'] = true;
+    } catch (Exception $e) {
+        die("MongoDB Connection failed: " . $e->getMessage());
+    }
 } else {
-    // Local Development: Use local MySQL
+    // Local Development: Use MySQL
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "";
     $dbname = "regtest";
+
+    if (!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)) {
+        die("MySQL connection failed: " . mysqli_connect_error());
+    }
+    
+    $GLOBALS['mysql'] = $con;
+    $GLOBALS['isMongoDb'] = false;
 }
-
-// Create database connection
-if (!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
-
-// Set charset to utf8
-mysqli_set_charset($con, "utf8");
-
