@@ -20,19 +20,19 @@ function updateAuthMenu() {
   if (!authMenu) return;
   
   if (isLoggedIn && user) {
+    authMenu.className = 'profile-dropdown';
     authMenu.innerHTML = `
-      <li class="profile-dropdown">
-        <a href="#" class="profile-link">
-          <i class="fas fa-user-circle"></i> ${escapeHtml(user.username)}
-          <i class="fas fa-chevron-down"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
-          <a href="#" onclick="logout(); return false;"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </div>
-      </li>
+      <a href="#" class="profile-link">
+        <i class="fas fa-user-circle"></i> ${escapeHtml(user.username)}
+        <i class="fas fa-chevron-down"></i>
+      </a>
+      <div class="dropdown-menu">
+        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+        <a href="#" onclick="logout(); return false;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
     `;
   } else {
+    authMenu.className = '';
     authMenu.innerHTML = '<a href="signup.html">Log in / Sign up</a>';
   }
 }
