@@ -1,134 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!--Header-->
-<div class="header">
-    <header>
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn"> 
-                <i class="fas fa-bars"></i>
-            </label>
-            <label class="logo">TravelSpot PH</label>
-            <form class="searchbox">
-                <input type="text" placeholder="Search" name="search">
-                <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
-            </form>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="travel.html">Travel</a></li>
-                <li><a href="aboutus.html">About us</a></li>
-                <li><a href="login.html">Log in / Sign up</a></li>
-            </ul>
-        </nav>
-    </header>
- </div>
+    <div class="header">
+        <header>
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <label class="logo">TravelSpot PH</label>
+                <form class="searchbox">
+                    <input type="text" placeholder="Search" name="search">
+                    <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
+                </form>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="travel.html">Travel</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
+                    <li><a href="login.html">Log in / Sign up</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
 
- <div class="backgroundimg">
-    <img src="img/BGLS.jpg" alt="Background image of a filipino guy drinking coffee">
- </div>
+    <div class="backgroundimg">
+        <img src="img/BGLS.jpg" alt="Background image of a filipino guy drinking coffee">
+    </div>
 
     <div class="box">
         <form id="loginForm">
-            <div style="font-size: 20px; margin: 10px; color: white;">Login</div>
-            <input id="email" type="email" placeholder="Email..." name="email" required><br><br>
-            <input id="password" type="password"  placeholder="Password..." name="password" required><br><br>
+            <div style="font-size: 32px; margin: 10px; color: white;">Login</div>
+            
+            <div class="input-group">
+                <input id="email" type="email" placeholder="Email address" name="email" required>
+                <i class="fas fa-envelope"></i>
+            </div>
+            
+            <div class="input-group">
+                <input id="password" type="password" placeholder="Password" name="password" required>
+                <i class="fas fa-lock"></i>
+            </div>
 
-            <input id="button" type="submit" value="Login"><br><br>
+            <input id="button" type="submit" value="Login">
 
-            <a href="signup.html">Click to Signup</a><br><br>
+            <a href="signup.html">Don't have an account? Sign up</a>
         </form>
     </div>
 
-	<!-- Success Modal -->
-	<div id="successModal" class="modal" style="display: none;">
-		<div class="modal-content success">
-			<span class="close" onclick="closeModal('successModal')">&times;</span>
-			<div class="modal-icon">✓</div>
-			<h2>Success!</h2>
-			<p id="successMessage"></p>
-		</div>
-	</div>
+    <!-- Success Modal -->
+    <div id="successModal" class="modal" style="display: none;">
+        <div class="modal-content success">
+            <span class="close" onclick="closeModal('successModal')">&times;</span>
+            <div class="modal-icon">✓</div>
+            <h2>Success!</h2>
+            <p id="successMessage"></p>
+        </div>
+    </div>
 
-	<!-- Error Modal -->
-	<div id="errorModal" class="modal" style="display: none;">
-		<div class="modal-content error">
-			<span class="close" onclick="closeModal('errorModal')">&times;</span>
-			<div class="modal-icon">✕</div>
-			<h2>Error!</h2>
-			<p id="errorMessage"></p>
-		</div>
-	</div>
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal" style="display: none;">
+        <div class="modal-content error">
+            <span class="close" onclick="closeModal('errorModal')">&times;</span>
+            <div class="modal-icon">✕</div>
+            <h2>Error!</h2>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
 
-	<script>
-		function closeModal(modalId) {
-			document.getElementById(modalId).style.display = 'none';
-		}
+    <script>
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
 
-		// Close modal when clicking outside
-		window.onclick = function(event) {
-			if (event.target.classList.contains('modal')) {
-				event.target.style.display = 'none';
-			}
-		}
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
 
-		// Check for success message from signup
-		const urlParams = new URLSearchParams(window.location.search);
-		if (urlParams.get('registered') === 'true') {
-			document.getElementById('successMessage').textContent = 'Account created successfully! Please login.';
-			document.getElementById('successModal').style.display = 'block';
-		}
+        // Check for success message from signup
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('registered') === 'true') {
+            document.getElementById('successMessage').textContent = 'Account created successfully! Please login.';
+            document.getElementById('successModal').style.display = 'block';
+        }
 
-		// Handle login form submission
-		document.getElementById('loginForm').addEventListener('submit', async function(e) {
-			e.preventDefault();
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
 
-			const email = document.getElementById('email').value;
-			const password = document.getElementById('password').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-			try {
-				const response = await fetch('/api/login', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({ email, password })
-				});
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password })
+                });
 
-				const data = await response.json();
+                const data = await response.json();
 
-				if (response.ok && data.success) {
-					// Store user data in localStorage
-					localStorage.setItem('user', JSON.stringify(data.user));
-					localStorage.setItem('isLoggedIn', 'true');
-					
-					// Redirect to home page
-					window.location.href = 'index.html';
-				} else {
-					document.getElementById('errorMessage').textContent = data.error || 'Login failed';
-					document.getElementById('errorModal').style.display = 'block';
-				}
-			} catch (error) {
-				console.error('Login error:', error);
-				document.getElementById('errorMessage').textContent = 'Network error. Please try again.';
-				document.getElementById('errorModal').style.display = 'block';
-			}
-		});
-	</script>
-<script src="js/signuplogin.js"></script>
+                if (response.ok && data.success) {
+                    // Store user data in localStorage
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    localStorage.setItem('isLoggedIn', 'true');
+
+                    // Redirect to home page
+                    window.location.href = 'index.html';
+                } else {
+                    document.getElementById('errorMessage').textContent = data.error || 'Login failed';
+                    document.getElementById('errorModal').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                document.getElementById('errorMessage').textContent = 'Network error. Please try again.';
+                document.getElementById('errorModal').style.display = 'block';
+            }
+        });
+    </script>
+    <script src="js/signuplogin.js"></script>
 </body>
+
 </html>
