@@ -47,20 +47,20 @@
 
  <div class="explore">
     <h2 class="titleq" >What to explore in Baguio?</h2>
-    <img class="img1" src="img/burnhamparkbag.jpg" alt="">
+    <img class="img1" src="img/burnampark.jpg" alt="Burnham Park with man-made lake">
     <div class="textBox">
     <h2>Burnham Park</h2>
     <p>Located along Jose Abad Santos Drive in the heart of Baguio City, Burnham Park offers a refreshing escape from city life. Inside this 32-hectare park, you'll find different clusters that consist of various attractions like a children's playground, a rose garden, an orchidarium, a picnic grove, and a traditional Igorot garden. Its main highlight, however, is a man-made lake in the center of the park. A visit here is not complete without riding a boat across the lake for a relaxing morning or afternoon amongst the trees. If you can, it is recommended to rent one of the swan boats here as well for a more memorable experience. </p>
     </div>
-    <img class="img2" src="img/minesviewparkbag.jpg" alt="">
+    <img class="img2" src="img/mineviewpark.jpg" alt="Mines View Park with panoramic mountain views">
     <div class="textBox">
     <h2>Mines View Park</h2>
     <p>Mines View Park is one of the famous tourist spots across Baguio pack with shops selling snacks, trinkets, botanical items, and others. Picture taking services with traditional Igorot clothes, horses, dogs and more are also available towards the lower half of the park. While in the edge of the Mines View Park lies a scenic view of mountains and forest, it also overlooked Itogon’s abandoned mines which are also known as Balatoc Mines. Due to its view, the observation deck of Mines View Park became a popular destination to take photos of Baguio’s scenery. This spot in the park also provides an open hut inclusive of chairs, to give shade and a resting area for visitors.</p>
     </div>
-    <img class="img3" src="img/tam-awanvillagebag.jpg" alt="">
+    <img class="img3" src="img/strawberryfarm.jpg" alt="Strawberry Farm in Baguio">
     <div class="textBox">
-    <h2>Tam-awan Village</h2>
-    <p>Tam-awan village offers a space for the local culture and arts to thrive by showcasing Ifugao and Kalinga huts and exhibits hosted by the artists of Baguio City. This tourist attraction in Baguio City is arguably the opposite of the city proper where the Western influences from the American occupation are still visible to this day. The village was founded in 1998 by the Chanum Foundation Inc., whose vision of the village is to be a venue for art and cultural activities that will raise appreciation for the Cordilleran heritage and boost the local economy. What started with three huts from Bangaan, Ifugao eventually became seven Ifugao huts and two Kalinga houses, which were reconstructed using original materials and new cogon roofs. Exhibits are constantly displayed inside the houses, with art pieces made by local artists. Cordilleran craftsmanship is highlighted by the artistry present in the village, making it accessible to the public.</p>
+    <h2>Strawberry Farm</h2>
+    <p>Pick your own fresh strawberries at the famous La Trinidad Strawberry Farm. This popular agri-tourism destination offers visitors a chance to experience farm life while enjoying the cool mountain air of Baguio. Taste the sweetest strawberries straight from the farm and enjoy strawberry-based products available at the farm shop. It's a perfect destination for families and a memorable experience for strawberry lovers.</p>
     </div>
  </div>
 

@@ -47,20 +47,20 @@
 
  <div class="explore">
     <h2 class="titleq" >What to explore in Siargao?</h2>
-    <img class="img1" src="img/cloud9siargao.jpg" alt="">
+    <img class="img1" src="img/cloudninesiar.jpg" alt="Cloud 9 surfing break">
     <div class="textBox">
     <h2>Cloud 9 Surfing Area</h2>
     <p>Surfing in Cloud 9 is a remarkable and stunning experience. The best months to hit the waves occur between September and March. Cloud 9 offers a thick and hollow barreling left/right-hander ride and was discovered by the American photographer John S. Callahan in the late 1980s. The reef break delivers perfect waves with offshore SW winds, NE swell, and around high tide when the tide is rising. Make sure to protect your head with a surf helmet and prepare for more or less serious wipeouts if you're a beginner. Although it can get a bit crowded, the famous wave can be surfed without boat support.</p>
     </div>
-    <img class="img2" src="img/guyamislandsiargao.jpg" alt="">
+    <img class="img2" src="img/nakedislandsia.jpg" alt="Naked Island with white sand and turquoise waters">
     <div class="textBox">
-    <h2>Guyam Island</h2>
-    <p>Guyam Island is an idyllic destination; its picture-perfect beachscape is characterized by emerald glass-like waters that are shallow enough to walk on during low tide and a small patch of cream-colored sand mixed with rocks/rock formations. Swim in its cool waters to douse the heat and relax and laze on the soft sand.</p>
+    <h2>Naked Island</h2>
+    <p>Naked Island is a stunning sandbar with no trees or structures, just pure white sand surrounded by crystal-clear turquoise waters. Perfect for swimming and sunbathing in paradise, offering an unforgettable tropical island experience.</p>
     </div>
-    <img class="img3" src="img/dakuislandsiargao.jpg" alt="">
+    <img class="img3" src="img/sugbalagoonsia.jpg" alt="Sugba Lagoon with limestone cliffs and mangroves">
     <div class="textBox">
-    <h2>Daku Island</h2>
-    <p>The charming Daku Island is a must-see during your trip to Siargao. With white sand, lush palm trees, and sparkling blue water, Daku Island is the definition of a tropical paradise. Its also one of the only remote islands inhabited by a few families, so its a great destination if you want a taste of authentic Filipino culture. Despite being home to a few residents, Daku remains relatively untouched. You can spend the afternoon splashing in the water or relaxing on the powdery-white shores of the beach. It’s also one of the few places around Siargao with giant waves – perfect for boogie boarding or surfing!</p>
+    <h2>Sugba Lagoon</h2>
+    <p>Sugba Lagoon is a hidden gem with pristine waters surrounded by lush mangroves and towering limestone cliffs. Enjoy kayaking, paddleboarding, snorkeling, and cliff jumping in this secluded paradise. The protected lagoon offers calm waters perfect for all water activities.</p>
     </div>
  </div>
 

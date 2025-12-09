@@ -93,12 +93,12 @@ if(isset($_SESSION['user_id']))
 
   <div class="column">
     <div class="card">
-      <img src="img/Cedillo.jpg" alt="John Rolly" style="width:100%">
+      <img src="img/John_Rolly_Cedillo.jpg" alt="John Rolly" style="width:100%">
       <div class="container">
         <h2>John Rolly N. Cedillo</h2>
-        <p class="title">Developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>johnrollycedillo0@example.com</p>
+        <p class="title">Full Stack Developer</p>
+        <p>Passionate developer bringing travel dreams to life through innovative web solutions and cutting-edge technology.</p>
+        <p>johnrollycedillo15@gmail.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
