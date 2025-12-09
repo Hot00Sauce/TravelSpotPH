@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - TravelSpot PH</title>
+    <link rel="icon" type="image/png" href="img/TravelSpotPH1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="css/profile.css">
+    <script src="js/auth.js" defer></script>
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+<!--Header-->
+<div class="header">
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn"> 
+                <i class="fas fa-bars"></i>
+            </label>
+            <a href="index.html" class="logo-link">
+              <img src="img/TravelSpotPH2.png" alt="TravelSpot PH" class="logo-img">
+            </a>
+            <form class="searchbox" method="GET" action="search.html">
+                <input type="text" placeholder="Search" name="search">
+                <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
+            </form>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="travel.html">Travel</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li id="auth-menu">
+                    <a href="signup.html">Log in / Sign up</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<!--Profile Content-->
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="profile-avatar">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <h1 id="welcomeMessage">Welcome!</h1>
+        <p>Manage your account settings</p>
+    </div>
+
+    <div class="profile-content">
+        <div class="profile-card">
+            <h2><i class="fas fa-info-circle"></i> Account Information</h2>
+            <div class="info-group">
+                <label>User ID:</label>
+                <span id="userId">-</span>
+            </div>
+            <div class="info-group">
+                <label>Username:</label>
+                <span id="username">-</span>
+            </div>
+            <div class="info-group">
+                <label>Email:</label>
+                <span id="userEmail">-</span>
+            </div>
+        </div>
+
+        <div class="profile-card danger-zone">
+            <h2><i class="fas fa-sign-out-alt"></i> Quick Actions</h2>
+            <button onclick="logout()" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div id="successModal" class="modal" style="display: none;">
+    <div class="modal-content success">
+        <span class="close" onclick="closeModal('successModal')">&times;</span>
+        <div class="modal-icon">✓</div>
+        <h2>Success!</h2>
+        <p id="successMessage"></p>
+    </div>
+</div>
+
+<!-- Error Modal -->
+<div id="errorModal" class="modal" style="display: none;">
+    <div class="modal-content error">
+        <span class="close" onclick="closeModal('errorModal')">&times;</span>
+        <div class="modal-icon">✕</div>
+        <h2>Error!</h2>
+        <p id="errorMessage"></p>
+    </div>
+</div>
+
+<!--Footer-->
+<footer>
+    <div class="primaryContent">
+        <div class="left area">
+            <div class="AboutUs">
+                <h3>About Us</h3>
+            </div>
+            <div class="content">
+                <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful destinations. We provide comprehensive travel guides and insider tips to help you discover the best of what our islands have to offer.</p>
+                <div class="social">
+                    <a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a>
+                    <a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a>
+                    <a href="https://twitter.com/"><span class="fab fa-twitter"></span></a>
+                    <a href="https://www.youtube.com/"><span class="fab fa-youtube"></span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="center area">
+            <h3>Address</h3>
+            <div class="content">
+                <div class="place">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <span class="Atext">Muntinlupa City, Metro Manila</span>
+                </div>
+                <div class="number">
+                    <span class="fas fa-phone-alt"></span>
+                    <span class="Atext">09572423121</span>
+                </div>
+                <div class="email">
+                    <span class="fas fa-envelope"></span>
+                    <span class="Atext">TravelSpotPH@gmail.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="right area">
+            <h3>Contact Us</h3>
+            <div class="content">
+                <form action="#">
+                    <div class="email">
+                        <div class="Atext">Email*</div>
+                        <input type="email" required>
+                    </div>
+                    <div class="message">
+                        <div class="Atext">Message*</div>
+                        <textarea cols="25" rows="2" required></textarea>
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <center>
+            <span class="title"><a href="#">TravelSpotPH</a> | </span>
+            <span class="far fa-copyright"></span><span> 2023 All rights reserved.</span>
+        </center>
+    </div>
+</footer>
+
+<script>
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+    }
+}
+
+// Check if user is logged in and load profile
+function loadProfile() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const user = JSON.parse(localStorage.getItem('user') || 'null');
+
+    if (!isLoggedIn || !user) {
+        // Redirect to login if not logged in
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // Display user information
+    document.getElementById('welcomeMessage').textContent = `Welcome, ${user.username}!`;
+    document.getElementById('userId').textContent = user.id || 'N/A';
+    document.getElementById('username').textContent = user.username;
+    document.getElementById('userEmail').textContent = user.email;
+}
+
+// Load profile on page load
+loadProfile();
+</script>
+
+</body>
+</html>
