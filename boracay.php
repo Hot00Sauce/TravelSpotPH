@@ -47,17 +47,17 @@
 
  <div class="explore">
     <h2 class="titleq" >What to explore in Boracay?</h2>
-    <img class="img1" src="img/whitebeachborac.jpg" alt="">
+    <img class="img1" src="img/whitebeachbor.jpg" alt="">
     <div class="textBox">
     <h2>White Beach</h2>
     <p>White Beach is essentially Boracay Island. As the island's main attraction, this Boracay beach is one of the best Visayas tourist spots and top tourist spots in the Philippines. Situated in the province of Aklan, White Beach is one of the best beaches in the Philippines and has always been the star of the show in Boracay Island. Travelers from all over the Philippines and the world can’t help but admire this Boracay beach's breathtaking beauty.</p>
     </div>
-    <img class="img2" src="img/willysrockborac.jpg" alt="">
+    <img class="img2" src="img/bulabogbeachbor.jpg" alt="">
     <div class="textBox">
     <h2>Willy's Rock</h2>
     <p>Willy's Rock is a volcanic rock formation that is located along that shallow waters of Station 1 in Boracay. Along with its unique shape, it has also become a popular attraction due to the shrine dedicated to the Blessed Virgin Mary that sits on its surface. Man-made steps leading to the shrine have been constructed on the rock formation to help visitors. Aside from the religious grotto, travelers also often step onto the rock formation to get a great view of the long shoreline of White Beach. Most locals also believe that the structure has been around for about a thousand years. </p>
     </div>
-    <img class="img3" src="img/ArielsPointborac.jpg" alt="">
+    <img class="img3" src="img/arielspointbor.jpg" alt="">
     <div class="textBox">
     <h2>Ariel's Point</h2>
     <p>Take a leap of faith and plunge into the beautiful waters of Boracay at one of the world's top cliff diving destinations. Located on the edge of a fishing village, Ariel's Point boasts lush tropical forests, clear turquoise waters, abundant marine life and volcanic rock formations. The party starts the minute you step aboard the traditional Filipino 'banca' boat. Sip on the unlimited drinks available then decide if you want to spend your time cliff diving, kayaking, snorkelling, open water swimming or lounging - tailor your day in paradise with the wide variety of activities. Replenish yourself after a physical morning with a lunch buffet includes fresh and traditional delicacies..</p>
@@ -73,7 +73,7 @@
           <h3>About Us</h3>
         </div>
         <div class="content">
-          <p>exanv bjshvvflvbnhvbwehvkn DJKS dmv,lm sklnvkjvkwlkdvkbkn VKSJdn vkh K chjsdb hksvjnks kh k.</p>
+          <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful destinations. We provide comprehensive travel guides and insider tips to help you discover the best of what our islands have to offer.</p>
           <div class="social">
             <a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a>
             <a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a>

@@ -4,6 +4,16 @@ session_start();
 include("connection.php");
 include("functions.php");
 
+$error_message = "";
+$success_message = "";
+
+// Check for success message from signup
+if(isset($_SESSION['success_message']))
+{
+    $success_message = $_SESSION['success_message'];
+    unset($_SESSION['success_message']);
+}
+
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $user_name = $_POST['user_name'];
@@ -24,18 +34,36 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 			   
                if($user_data['password'] === $password)
                {
+                // Regenerate session ID to prevent session fixation
+                session_regenerate_id(true);
+                
                 $_SESSION['user_id'] = $user_data['user_id'];
+                $_SESSION['user_name'] = $user_data['user_name'];
+                $_SESSION['logged_in'] = true;
+                $_SESSION['last_activity'] = time();
+                $_SESSION['success_message'] = "Login successful! Welcome back.";
+                
                 header("Location: home.php");
                 die;
                }
+               else
+               {
+                   $error_message = "Wrong username or password!";
+               }
+		   }
+		   else
+		   {
+		       $error_message = "User not found!";
 		   }
         }
-        
-        echo "wrong username or password!";
+        else
+        {
+            $error_message = "Database error. Please try again.";
+        }
 
     }else
     {
-        echo "Please enter some valid information!";
+        $error_message = "Please enter valid information!";
     }
 }
 ?>
@@ -87,14 +115,61 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <div class="box">
         <form method="post">
             <div style="font-size: 20px; margin: 10px; color: white;">Login</div>
-            <input id="text" type="text" placeholder="Username..." name="user_name"><br><br>
-            <input id="text" type="password"  placeholder="Password..." name="password"><br><br>
+            <input id="text" type="text" placeholder="Username..." name="user_name" required><br><br>
+            <input id="text" type="password"  placeholder="Password..." name="password" required><br><br>
 
             <input id="button" type="submit" value="Login"><br><br>
 
             <a href="signup.php">Click to Signup</a><br><br>
         </form>
     </div>
+
+	<!-- Success Modal -->
+	<?php if(!empty($success_message)): ?>
+	<div id="successModal" class="modal">
+		<div class="modal-content success">
+			<span class="close" onclick="closeModal('successModal')">&times;</span>
+			<div class="modal-icon">✓</div>
+			<h2>Success!</h2>
+			<p><?php echo $success_message; ?></p>
+		</div>
+	</div>
+	<?php endif; ?>
+
+	<!-- Error Modal -->
+	<?php if(!empty($error_message)): ?>
+	<div id="errorModal" class="modal">
+		<div class="modal-content error">
+			<span class="close" onclick="closeModal('errorModal')">&times;</span>
+			<div class="modal-icon">✕</div>
+			<h2>Error!</h2>
+			<p><?php echo $error_message; ?></p>
+		</div>
+	</div>
+	<?php endif; ?>
+
+	<script>
+		// Show modals when page loads
+		window.onload = function() {
+			<?php if(!empty($success_message)): ?>
+			document.getElementById('successModal').style.display = 'block';
+			<?php endif; ?>
+			<?php if(!empty($error_message)): ?>
+			document.getElementById('errorModal').style.display = 'block';
+			<?php endif; ?>
+		}
+
+		function closeModal(modalId) {
+			document.getElementById(modalId).style.display = 'none';
+		}
+
+		// Close modal when clicking outside
+		window.onclick = function(event) {
+			if (event.target.classList.contains('modal')) {
+				event.target.style.display = 'none';
+			}
+		}
+	</script>
 </div>
 <script src="js/signuplogin.js"></script>
 </body>

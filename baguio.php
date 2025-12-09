@@ -73,7 +73,7 @@
           <h3>About Us</h3>
         </div>
         <div class="content">
-          <p>exanv bjshvvflvbnhvbwehvkn DJKS dmv,lm sklnvkjvkwlkdvkbkn VKSJdn vkh K chjsdb hksvjnks kh k.</p>
+          <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful destinations. We provide comprehensive travel guides and insider tips to help you discover the best of what our islands have to offer.</p>
           <div class="social">
             <a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a>
             <a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a>

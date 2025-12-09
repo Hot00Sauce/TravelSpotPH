@@ -1,23 +1,15 @@
 <?php
-/**
- * Image Setup Page - Downloads all images from Unsplash
- * Visit this page to automatically download all 23 images
- */
 
 require_once 'unsplash_manager.php';
 
-// ========================================
-// CONFIGURE YOUR UNSPLASH API KEY HERE
-// ========================================
+// UNSPLASH API KEY HERE
 $UNSPLASH_ACCESS_KEY = 'w93ehKzuUVCGnVKwCRHFyucbJkUXRLi1DEk1WTlDbEU';
-// Get your FREE key at: https://unsplash.com/developers
-// ========================================
 
 // Initialize the image manager
 $imageManager = null;
 $errorMessage = null;
 
-if ($UNSPLASH_ACCESS_KEY !== 'YOUR_ACCESS_KEY_HERE') {
+if ($UNSPLASH_ACCESS_KEY !== 'w93ehKzuUVCGnVKwCRHFyucbJkUXRLi1DEk1WTlDbEU') {
     try {
         $imageManager = new UnsplashImageManager($UNSPLASH_ACCESS_KEY);
     } catch (Exception $e) {

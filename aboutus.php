@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+include("connection.php");
+include("functions.php");
+
+$user_data = null;
+$is_logged_in = false;
+
+if(isset($_SESSION['user_id']))
+{
+    $user_data = check_login($con);
+    if($user_data !== false)
+    {
+        $is_logged_in = true;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +41,7 @@
                 <i class="fas fa-bars"></i>
             </label>
             <label class="logo">TravelSpot PH</label>
-            <form class="searchbox">
+            <form class="searchbox" method="GET" action="search.php">
                 <input type="text" placeholder="Search" name="search">
                 <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
             </form>
@@ -30,7 +49,20 @@
                 <li><a href="home.php">Home</a></li>
                 <li><a href="travel.php">Travel</a></li>
                 <li><a href="aboutus.php">About us</a></li>
-                <li><a href="signup.php">Log in/Sign up</a></li>
+                <?php if($is_logged_in): ?>
+                    <li class="profile-dropdown">
+                        <a href="#" class="profile-link">
+                            <i class="fas fa-user-circle"></i> <?php echo htmlspecialchars($user_data['user_name']); ?>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="profile.php"><i class="fas fa-user"></i> My Profile</a>
+                            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </li>
+                <?php else: ?>
+                    <li><a href="signup.php">Log in/Sign up</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
@@ -40,8 +72,8 @@
  <div class="aboutus">
  <div class="about-section">
   <h1>About Us Page</h1>
-  <p>evknhvwbvwk jencnwrwrnrvnwen jenjnwkvkvnkn oqejnfwenvenw.</p>
-  <p>wekvjnvrnr junrnveniorwviorn iwrnvrnivnoirim joenrvwrvnriopnvw owjenfwvriovwm wojenf.</p>
+  <p>Welcome to TravelSpot PH, your ultimate guide to discovering the breathtaking beauty and hidden gems of the Philippines. We are passionate travelers and locals dedicated to showcasing the most stunning destinations across our beloved archipelago.</p>
+  <p>Our mission is to inspire and empower travelers to explore the diverse landscapes, rich culture, and warm hospitality that the Philippines has to offer. From pristine beaches and crystal-clear waters to majestic mountains and vibrant cities, we provide comprehensive guides, insider tips, and carefully curated information to help you create unforgettable memories in paradise.</p>
 </div>
 
 <h2 style="text-align:center">Our Team</h2>
@@ -96,7 +128,7 @@
           <h3>About Us</h3>
         </div>
         <div class="content">
-          <p>exanv bjshvvflvbnhvbwehvkn DJKS dmv,lm sklnvkjvkwlkdvkbkn VKSJdn vkh K chjsdb hksvjnks kh k.</p>
+          <p>TravelSpot PH is your trusted companion for exploring the Philippines' most beautiful destinations. We provide comprehensive travel guides and insider tips to help you discover the best of what our islands have to offer.</p>
           <div class="social">
             <a href="https://www.facebook.com/"><span class="fab fa-facebook"></span></a>
             <a href="https://www.instagram.com/?hl=en"><span class="fab fa-instagram"></span></a>

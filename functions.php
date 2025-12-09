@@ -18,9 +18,8 @@ function check_login($con)
 		}
 	}
 
-	//redirect to login
-	header("Location: login.php");
-	die;
+	// Return false instead of redirecting
+	return false;
 
 }
 

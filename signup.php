@@ -4,6 +4,8 @@ session_start();
 	include("connection.php");
 	include("functions.php");
 
+	$error_message = "";
+	$success_message = "";
 
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
@@ -18,14 +20,26 @@ session_start();
 			$user_id = random_num(20);
 			$query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
 
-			mysqli_query($con, $query);
-
-			header("Location: login.php");
-			die;
+			if(mysqli_query($con, $query))
+			{
+				$_SESSION['success_message'] = "Account created successfully! Please login.";
+				header("Location: login.php");
+				die;
+			}else
+			{
+				$error_message = "Error creating account. Please try again.";
+			}
 		}else
 		{
-			echo "Please enter some valid information!";
+			$error_message = "Please enter valid information! Username cannot be numeric.";
 		}
+	}
+
+	// Check for success message from redirect
+	if(isset($_SESSION['success_message']))
+	{
+		$success_message = $_SESSION['success_message'];
+		unset($_SESSION['success_message']);
 	}
 ?>
 
@@ -78,14 +92,61 @@ session_start();
 		<form method="post">
 			<div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
 
-			<input id="text" type="text" name="user_name" placeholder="Username..."><br><br>
-			<input id="text" type="password" name="password" placeholder="Password..."><br><br>
+			<input id="text" type="text" name="user_name" placeholder="Username..." required><br><br>
+			<input id="text" type="password" name="password" placeholder="Password..." required><br><br>
 
 			<input id="button" type="submit" value="Signup"><br><br>
 
 			<a href="login.php">Click to Login</a><br><br>
 		</form>
 	</div>
+
+	<!-- Success Modal -->
+	<?php if(!empty($success_message)): ?>
+	<div id="successModal" class="modal">
+		<div class="modal-content success">
+			<span class="close" onclick="closeModal('successModal')">&times;</span>
+			<div class="modal-icon">✓</div>
+			<h2>Success!</h2>
+			<p><?php echo $success_message; ?></p>
+		</div>
+	</div>
+	<?php endif; ?>
+
+	<!-- Error Modal -->
+	<?php if(!empty($error_message)): ?>
+	<div id="errorModal" class="modal">
+		<div class="modal-content error">
+			<span class="close" onclick="closeModal('errorModal')">&times;</span>
+			<div class="modal-icon">✕</div>
+			<h2>Error!</h2>
+			<p><?php echo $error_message; ?></p>
+		</div>
+	</div>
+	<?php endif; ?>
+
+	<script>
+		// Show modals when page loads
+		window.onload = function() {
+			<?php if(!empty($success_message)): ?>
+			document.getElementById('successModal').style.display = 'block';
+			<?php endif; ?>
+			<?php if(!empty($error_message)): ?>
+			document.getElementById('errorModal').style.display = 'block';
+			<?php endif; ?>
+		}
+
+		function closeModal(modalId) {
+			document.getElementById(modalId).style.display = 'none';
+		}
+
+		// Close modal when clicking outside
+		window.onclick = function(event) {
+			if (event.target.classList.contains('modal')) {
+				event.target.style.display = 'none';
+			}
+		}
+	</script>
     
     <script src="js/signuplogin.js"></script>
 </body>
