@@ -7,7 +7,7 @@ echo ========================================
 echo    TravelSpotPH - Quick Access Menu
 echo ========================================
 echo.
-echo 1. Open Project Summary (index.html)
+echo 1. Open Project Summary (home.php)
 echo 2. Open Image Guide
 echo 3. Open in Browser (Home Page)
 echo 4. Open in Browser (Login Page)
