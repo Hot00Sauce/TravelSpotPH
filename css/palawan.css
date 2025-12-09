@@ -505,12 +505,30 @@ footer {
     }
 
     .palawanImg .content h2 {
-        font-size: 28px;
+        font-size: 24px;
+    }
+    
+    .palawanImg .content p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .titleq {
+        font-size: 26px;
     }
 
     .img1,
     .img2,
     .img3 {
         height: 250px;
+    }
+    
+    .textBox h2 {
+        font-size: 20px;
+    }
+    
+    .textBox p {
+        font-size: 13px;
+        line-height: 1.6;
     }
 }
