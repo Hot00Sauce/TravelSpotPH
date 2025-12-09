@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TravelSpot PH - Boracay</title>
+    <link rel="icon" type="image/png" href="img/TravelSpotPH1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="css/boracay.css">
         <!--Google fonts-->
@@ -21,8 +22,10 @@
             <label for="check" class="checkbtn"> 
                 <i class="fas fa-bars"></i>
             </label>
-            <label class="logo">TravelSpot PH</label>
-            <form class="searchbox">
+            <a href="home.php" class="logo-link">
+              <img src="img/TravelSpotPH2.png" alt="TravelSpot PH" class="logo-img">
+            </a>
+            <form class="searchbox" method="GET" action="search.php">
                 <input type="text" placeholder="Search" name="search">
                 <button type="submit"> <i class="fa fa-search" alt="Search"></i></button>
             </form>
