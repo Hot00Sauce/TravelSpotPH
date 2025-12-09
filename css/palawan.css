@@ -37,6 +37,12 @@ nav {
     letter-spacing: 1px;
 }
 
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
 nav ul {
     display: flex;
     list-style: none;
