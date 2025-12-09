@@ -444,26 +444,77 @@ footer {
         display: block;
     }
 
+    nav {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
     nav ul {
         position: fixed;
         width: 100%;
         height: 100vh;
         background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-        top: 80px;
+        top: 70px;
         left: -100%;
         text-align: center;
         transition: all 0.5s;
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 30px;
+        padding-top: 40px;
+        gap: 0;
     }
 
     nav ul li {
-        margin: 20px 0;
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        display: block;
+        padding: 12px 20px;
+    }
+
+    .profile-dropdown .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        margin-top: 10px;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .profile-dropdown .dropdown-menu a {
+        color: white;
+        padding: 10px 20px;
+    }
+
+    .profile-dropdown .dropdown-menu a:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .profile-dropdown .dropdown-menu a i {
+        color: white;
+    }
+
+    .profile-link i.fa-chevron-down {
+        display: none;
     }
 
     #check:checked~ul {
         left: 0;
+    }
+
+    .searchbox {
+        width: 100%;
+        max-width: 400px;
+        margin: 10px 0 0 0;
+    }
+
+    .searchbox input {
+        width: 100%;
+        flex: 1;
     }
 }
 
@@ -507,12 +558,12 @@ footer {
     .palawanImg .content h2 {
         font-size: 24px;
     }
-    
+
     .palawanImg .content p {
         font-size: 13px;
         line-height: 1.5;
     }
-    
+
     .titleq {
         font-size: 26px;
     }
@@ -522,11 +573,11 @@ footer {
     .img3 {
         height: 250px;
     }
-    
+
     .textBox h2 {
         font-size: 20px;
     }
-    
+
     .textBox p {
         font-size: 13px;
         line-height: 1.6;
