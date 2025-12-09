@@ -64,6 +64,75 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
+/* Profile Dropdown */
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.profile-link i.fa-user-circle {
+    font-size: 20px;
+}
+
+.profile-link i.fa-chevron-down {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.profile-dropdown:hover .profile-link i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.profile-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    border-radius: 0 !important;
+}
+
+.dropdown-menu a:hover {
+    background: #f0f0f0;
+    transform: none !important;
+}
+
+.dropdown-menu a i {
+    width: 20px;
+    font-size: 16px;
+    color: #1e3c72;
+}
+
 .searchbox {
     display: flex;
     align-items: center;
