@@ -16,35 +16,28 @@ if (session_status() === PHP_SESSION_NONE) {
     ini_set('session.use_strict_mode', 1); // Prevent session fixation attacks
 }
 
-// Determine environment
+// Database Configuration - Auto-detect environment
 $environment = getenv('ENVIRONMENT') ?: 'local';
-$mongodbUri = getenv('MONGODB_URI');
 
-if ($environment === 'production' && $mongodbUri) {
-    // Production: Use MongoDB Atlas
-    try {
-        require 'vendor/autoload.php';
-        
-        $mongoClient = new MongoDB\Client($mongodbUri);
-        $con = $mongoClient->selectDatabase('travelspotph');
-        
-        // Store in global variable for compatibility
-        $GLOBALS['mongodb'] = $con;
-        $GLOBALS['isMongoDb'] = true;
-    } catch (Exception $e) {
-        die("MongoDB Connection failed: " . $e->getMessage());
-    }
+if ($environment === 'production') {
+    // Production: Use remote database from environment variables
+    $dbhost = getenv('DB_HOST') ?: 'localhost';
+    $dbuser = getenv('DB_USER') ?: 'root';
+    $dbpass = getenv('DB_PASS') ?: '';
+    $dbname = getenv('DB_NAME') ?: 'regtest';
 } else {
-    // Local Development: Use MySQL
+    // Local Development: Use local MySQL
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "";
     $dbname = "regtest";
-
-    if (!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)) {
-        die("MySQL connection failed: " . mysqli_connect_error());
-    }
-    
-    $GLOBALS['mysql'] = $con;
-    $GLOBALS['isMongoDb'] = false;
 }
+
+// Create database connection
+if (!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
+
+// Set charset to utf8
+mysqli_set_charset($con, "utf8");
+
