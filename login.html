@@ -155,9 +155,18 @@
                 const data = await response.json();
 
                 if (response.ok && data.success) {
-                    // Store user data in localStorage
-                    localStorage.setItem('user', JSON.stringify(data.user));
-                    localStorage.setItem('isLoggedIn', 'true');
+                    // Store user data in localStorage - ensures persistent session
+                    try {
+                        localStorage.setItem('user', JSON.stringify(data.user));
+                        localStorage.setItem('isLoggedIn', 'true');
+                        console.log('Session saved successfully');
+                    } catch (storageError) {
+                        console.error('Failed to save session:', storageError);
+                        showModal('errorModal', 'Failed to save login session. Please check your browser settings.');
+                        button.disabled = false;
+                        button.innerHTML = '<span>Login</span><i class="fas fa-arrow-right"></i>';
+                        return;
+                    }
 
                     showModal('successModal', 'Login successful! Redirecting...');
                     setTimeout(() => {
