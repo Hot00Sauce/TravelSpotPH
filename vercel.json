@@ -4,9 +4,8 @@
             "runtime": "vercel-php@0.6.1"
         }
     },
-    "routes": [
-        { "src": "/index.php", "dest": "/home.php" },
-        { "src": "/(.*)\\.php$", "dest": "/$1.php" },
-        { "src": "/(.*)", "dest": "/$1.php" }
+    "rewrites": [
+        { "source": "/", "destination": "/home.php" },
+        { "source": "/(.*)", "destination": "/$1" }
     ]
 }
