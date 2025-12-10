@@ -1,0 +1,68 @@
+/* Performance Optimization CSS */
+
+/* Improve font rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Hardware acceleration for smoother animations */
+.header,
+.destination-card,
+.overlay,
+.image-link {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Optimize images for better performance */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduce paint on hover effects */
+a, button {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Optimize transitions */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent layout shifts during loading */
+img[loading="lazy"] {
+    min-height: 200px;
+    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+}
+
+/* Optimize form inputs */
+input, textarea, select {
+    will-change: contents;
+}
+
+/* Reduce repaints on animations */
+@media (prefers-reduced-motion: no-preference) {
+    .destination-card img {
+        transition: transform 0.3s ease;
+    }
+    
+    .destination-card:hover img {
+        transform: scale(1.05);
+    }
+}
+
+/* Optimize for mobile devices */
+@media (max-width: 768px) {
+    img[loading="lazy"] {
+        min-height: 150px;
+    }
+}

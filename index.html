@@ -18,14 +18,18 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/img/TravelSpotPH1.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/img/TravelSpotPH1.png">
     <link rel="apple-touch-icon" sizes="167x167" href="/img/TravelSpotPH1.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/home.css" as="style">
+    
     <link rel="stylesheet" href="css/home.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
     <script src="js/home.js" defer></script>
     <script src="js/auth.js" defer></script>
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 
 <body>
@@ -59,32 +63,32 @@
     <div class="slideshow-container">
 
         <div class="mySlides fade">
-            <a href="palawan.html"><img src="img/Palawan.jpg" style="width:100%"></a>
+            <a href="palawan.html"><img src="img/Palawan.jpg" style="width:100%" loading="eager"></a>
             <div class="text">Palawan</div>
         </div>
 
         <div class="mySlides fade">
-            <a href="boracay.html"><img src="img/Boracay.jpg" style="width:100%"></a>
+            <a href="boracay.html"><img src="img/Boracay.jpg" style="width:100%" loading="lazy"></a>
             <div class="text">Boracay</div>
         </div>
 
         <div class="mySlides fade">
-            <a href="bohol.html"><img src="img/Bohol.jpg" style="width:100%"></a>
+            <a href="bohol.html"><img src="img/Bohol.jpg" style="width:100%" loading="lazy"></a>
             <div class="text">Bohol</div>
         </div>
 
         <div class="mySlides fade">
-            <a href="siargao.html"><img src="img/Siargao.jpg" style="width:100%"></a>
+            <a href="siargao.html"><img src="img/Siargao.jpg" style="width:100%" loading="lazy"></a>
             <div class="text">Siargao</div>
         </div>
 
         <div class="mySlides fade">
-            <a href="baguio.html"><img src="img/Baguio.jpg" style="width:100%"></a>
+            <a href="baguio.html"><img src="img/Baguio.jpg" style="width:100%" loading="lazy"></a>
             <div class="text">Baguio</div>
         </div>
 
         <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlide(1)">❯</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
 
         <!-- Position the dot container at the bottom center -->
         <div class="dot-container" style="text-align:center">

@@ -18,14 +18,19 @@
   <link rel="apple-touch-icon" sizes="152x152" href="/img/TravelSpotPH1.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/img/TravelSpotPH1.png">
   <link rel="apple-touch-icon" sizes="167x167" href="/img/TravelSpotPH1.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="css/bohol.css" as="style">
+  <link rel="preload" href="img/Bohol.jpg" as="image">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="css/bohol.css">
   <script src="js/auth.js" defer></script>
   <script src="js/image-protection.js" defer></script>
   <!--Google fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 
 <style>
@@ -64,7 +69,7 @@
 
   <!--content-->
   <div class="palawanImg">
-    <img src="img/Bohol.jpg" alt="beautiful image of Palawan">
+    <img src="img/Bohol.jpg" alt="beautiful image of Palawan" loading="eager">
     <div class="content">
       <h2>Bohol</h2>
       <p>Bohol is a province of the Philippines, in the country's Central Visayas region. It
@@ -78,7 +83,7 @@
 
   <div class="explore">
     <h2 class="titleq">What to explore in Bohol?</h2>
-    <img class="img1" src="img/chocolatehillsboh.jpg" alt="Chocolate Hills - thousands of conical hills">
+    <img class="img1" src="img/chocolatehillsboh.jpg" alt="Chocolate Hills - thousands of conical hills" loading="lazy">
     <div class="textBox">
       <h2>Chocolate Hills</h2>
       <p>Without a doubt, Bohol’s most iconic tourist attraction is the Chocolate Hills. This geological wonder made up
@@ -96,7 +101,7 @@
         yet unique formation and rich vegetation that turns into chocolate brown during the dry months, hence, the name.
       </p>
     </div>
-    <img class="img2" src="img/tarsiersboh.jpg" alt="Philippine Tarsiers - world's smallest primates">
+    <img class="img2" src="img/tarsiersboh.jpg" alt="Philippine Tarsiers - world's smallest primates" loading="lazy">
     <div class="textBox">
       <h2>Tarsiers</h2>
       <p>Without a doubt, Bohol’s most iconic tourist attraction is the Chocolate Hills. This geological wonder made up
@@ -114,7 +119,7 @@
         yet unique formation and rich vegetation that turns into chocolate brown during the dry months, hence, the name.
       </p>
     </div>
-    <img class="img3" src="img/lobocriverboh.jpg" alt="Loboc River Cruise with floating restaurant">
+    <img class="img3" src="img/lobocriverboh.jpg" alt="Loboc River Cruise with floating restaurant" loading="lazy">
     <div class="textBox">
       <h2>Loboc Cruise</h2>
       <p>The Loboc River Cruise in Loboc town is a significant highlight in most Bohol countryside tours. It usually

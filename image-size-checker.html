@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Size Checker - TravelSpot PH</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #2a5298;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .info-box {
+            background: #f0f8ff;
+            border-left: 4px solid #2a5298;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .info-box h3 {
+            color: #2a5298;
+            margin-bottom: 10px;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .info-box li {
+            margin: 5px 0;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .image-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            background: #fafafa;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .image-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .image-size {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .size-good {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .size-warning {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        .size-bad {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .btn {
+            background: #2a5298;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px 5px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #1e3c72;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Image Size Checker</h1>
+        <p class="subtitle">Check your website images and optimize for better performance</p>
+
+        <div class="info-box">
+            <h3>📊 Recommended Image Sizes:</h3>
+            <ul>
+                <li><strong>✅ Excellent:</strong> < 100 KB (Green)</li>
+                <li><strong>⚠️ Good:</strong> 100-200 KB (Yellow)</li>
+                <li><strong>❌ Needs Optimization:</strong> > 200 KB (Red)</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Tip:</strong> Use <a href="https://tinypng.com/" target="_blank" style="color: #2a5298;">TinyPNG</a> or <a href="https://squoosh.app/" target="_blank" style="color: #2a5298;">Squoosh.app</a> to compress images</p>
+        </div>
+
+        <div class="stats" id="stats">
+            <div class="stat-box">
+                <div class="stat-number" id="totalImages">0</div>
+                <div class="stat-label">Total Images</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="totalSize">0 MB</div>
+                <div class="stat-label">Total Size</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="avgSize">0 KB</div>
+                <div class="stat-label">Average Size</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="needsOptimization">0</div>
+                <div class="stat-label">Needs Optimization</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 20px 0;">
+            <button class="btn" onclick="checkImages()">🔄 Refresh Check</button>
+            <a href="https://tinypng.com/" target="_blank" class="btn" style="text-decoration: none; display: inline-block;">🎨 Optimize with TinyPNG</a>
+        </div>
+
+        <div id="imageGrid" class="image-grid">
+            <div class="loading">Loading images...</div>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            'Palawan.jpg', 'Boracay.jpg', 'Bohol.jpg', 'Siargao.jpg', 'Baguio.jpg',
+            'undergroundriverpal.jpg', 'islandhopingpal.jpg', 'safaripal.jpg',
+            'whitebeachbor.jpg', 'bulabogbeachbor.jpg', 'arielspointbor.jpg',
+            'chocolatehillsboh.jpg', 'tarsiersboh.jpg', 'lobocriverboh.jpg',
+            'cloudninesiar.jpg', 'nakedislandsia.jpg', 'sugbalagoonsia.jpg',
+            'burnampark.jpg', 'mineviewpark.jpg', 'strawberryfarm.jpg',
+            'Eric_Cornelio.png', 'John_Rolly_Cedillo.jpg', 'Jason_Clet.png',
+            'TravelSpotPH1.png', 'TravelSpotPH2.png'
+        ];
+
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + ' ' + sizes[i];
+        }
+
+        function getSizeClass(sizeKB) {
+            if (sizeKB < 100) return 'size-good';
+            if (sizeKB < 200) return 'size-warning';
+            return 'size-bad';
+        }
+
+        function getSizeIcon(sizeKB) {
+            if (sizeKB < 100) return '✅';
+            if (sizeKB < 200) return '⚠️';
+            return '❌';
+        }
+
+        async function checkImages() {
+            const imageGrid = document.getElementById('imageGrid');
+            imageGrid.innerHTML = '<div class="loading">Checking images...</div>';
+
+            let totalSize = 0;
+            let loadedImages = 0;
+            let needsOptimization = 0;
+            const imageData = [];
+
+            for (const imageName of images) {
+                try {
+                    const response = await fetch(`img/${imageName}`, { method: 'HEAD' });
+                    const size = parseInt(response.headers.get('content-length') || 0);
+                    const sizeKB = size / 1024;
+                    
+                    if (sizeKB > 200) needsOptimization++;
+                    
+                    imageData.push({
+                        name: imageName,
+                        size: size,
+                        sizeKB: sizeKB
+                    });
+
+                    totalSize += size;
+                    loadedImages++;
+                } catch (error) {
+                    console.log(`Could not load: ${imageName}`);
+                }
+            }
+
+            // Update stats
+            document.getElementById('totalImages').textContent = loadedImages;
+            document.getElementById('totalSize').textContent = formatBytes(totalSize);
+            document.getElementById('avgSize').textContent = Math.round(totalSize / loadedImages / 1024) + ' KB';
+            document.getElementById('needsOptimization').textContent = needsOptimization;
+
+            // Display images
+            imageGrid.innerHTML = imageData.map(img => `
+                <div class="image-card">
+                    <img src="img/${img.name}" alt="${img.name}" loading="lazy">
+                    <div class="image-name">${img.name}</div>
+                    <div class="image-size ${getSizeClass(img.sizeKB)}">
+                        ${getSizeIcon(img.sizeKB)} ${formatBytes(img.size)}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Check images on load
+        window.addEventListener('load', checkImages);
+    </script>
+</body>
+</html>
