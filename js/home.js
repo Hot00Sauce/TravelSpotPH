@@ -42,9 +42,9 @@ function showSlides(n) {
 
     // Show and fade in the current slide
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(function() {
+    setTimeout(function () {
         slides[slideIndex - 1].style.opacity = "1";
     }, 10);
-    
+
     dots[slideIndex - 1].className += " active";
 }

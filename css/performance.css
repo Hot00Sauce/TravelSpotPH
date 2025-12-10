@@ -28,7 +28,8 @@ html {
 }
 
 /* Reduce paint on hover effects */
-a, button {
+a,
+button {
     backface-visibility: hidden;
     transform: translateZ(0);
 }
@@ -45,7 +46,9 @@ img[loading="lazy"] {
 }
 
 /* Optimize form inputs */
-input, textarea, select {
+input,
+textarea,
+select {
     will-change: contents;
 }
 
@@ -54,7 +57,7 @@ input, textarea, select {
     .destination-card img {
         transition: transform 0.3s ease;
     }
-    
+
     .destination-card:hover img {
         transform: scale(1.05);
     }

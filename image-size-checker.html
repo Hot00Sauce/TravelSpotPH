@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -164,6 +165,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>🖼️ Image Size Checker</h1>
@@ -172,11 +174,14 @@
         <div class="info-box">
             <h3>📊 Recommended Image Sizes:</h3>
             <ul>
-                <li><strong>✅ Excellent:</strong> < 100 KB (Green)</li>
+                <li><strong>✅ Excellent:</strong>
+                    < 100 KB (Green)</li>
                 <li><strong>⚠️ Good:</strong> 100-200 KB (Yellow)</li>
                 <li><strong>❌ Needs Optimization:</strong> > 200 KB (Red)</li>
             </ul>
-            <p style="margin-top: 10px;"><strong>Tip:</strong> Use <a href="https://tinypng.com/" target="_blank" style="color: #2a5298;">TinyPNG</a> or <a href="https://squoosh.app/" target="_blank" style="color: #2a5298;">Squoosh.app</a> to compress images</p>
+            <p style="margin-top: 10px;"><strong>Tip:</strong> Use <a href="https://tinypng.com/" target="_blank"
+                    style="color: #2a5298;">TinyPNG</a> or <a href="https://squoosh.app/" target="_blank"
+                    style="color: #2a5298;">Squoosh.app</a> to compress images</p>
         </div>
 
         <div class="stats" id="stats">
@@ -200,7 +205,8 @@
 
         <div style="text-align: center; margin: 20px 0;">
             <button class="btn" onclick="checkImages()">🔄 Refresh Check</button>
-            <a href="https://tinypng.com/" target="_blank" class="btn" style="text-decoration: none; display: inline-block;">🎨 Optimize with TinyPNG</a>
+            <a href="https://tinypng.com/" target="_blank" class="btn"
+                style="text-decoration: none; display: inline-block;">🎨 Optimize with TinyPNG</a>
         </div>
 
         <div id="imageGrid" class="image-grid">
@@ -254,9 +260,9 @@
                     const response = await fetch(`img/${imageName}`, { method: 'HEAD' });
                     const size = parseInt(response.headers.get('content-length') || 0);
                     const sizeKB = size / 1024;
-                    
+
                     if (sizeKB > 200) needsOptimization++;
-                    
+
                     imageData.push({
                         name: imageName,
                         size: size,
@@ -292,4 +298,5 @@
         window.addEventListener('load', checkImages);
     </script>
 </body>
+
 </html>
