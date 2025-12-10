@@ -149,6 +149,123 @@ http://localhost/TravelSpotPH
 
 ---
 
+## 🗄️ MongoDB Integration (Production)
+
+The project supports **dual database configuration**:
+- **Local Development**: MySQL (XAMPP)
+- **Production (Vercel)**: MongoDB Atlas
+
+### MongoDB Setup for Production
+
+#### Step 1: Create MongoDB Atlas Account
+
+1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. Create a free account
+3. Create a new **Cluster** (M0 Free Tier)
+
+#### Step 2: Configure Database Access
+
+1. **Database Access** → **Add New Database User**
+   - Username: `your_username`
+   - Password: `your_secure_password`
+   - Database User Privileges: **Read and write to any database**
+
+2. **Network Access** → **Add IP Address**
+   - Click **Allow Access from Anywhere** (0.0.0.0/0) for Vercel deployment
+   - Or add specific IP addresses for security
+
+#### Step 3: Get Connection String
+
+1. Click **Connect** on your cluster
+2. Choose **Connect your application**
+3. Copy the connection string (looks like):
+```
+mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
+```
+
+4. Replace `<username>` and `<password>` with your credentials
+
+#### Step 4: Configure Environment Variables
+
+Create a `.env` file in your project root (for local testing):
+
+```env
+ENVIRONMENT=production
+MONGODB_URI=mongodb+srv://your_username:your_password@cluster0.xxxxx.mongodb.net/travelspotph?retryWrites=true&w=majority
+```
+
+**For Vercel Deployment:**
+
+1. Go to your Vercel project
+2. **Settings** → **Environment Variables**
+3. Add these variables:
+   - `ENVIRONMENT` = `production`
+   - `MONGODB_URI` = `your_mongodb_connection_string`
+
+#### Step 5: How It Works
+
+The `connection.php` file automatically detects the environment:
+
+```php
+// Determine environment
+$environment = getenv('ENVIRONMENT') ?: 'local';
+$mongodbUri = getenv('MONGODB_URI');
+
+if ($environment === 'production' && $mongodbUri) {
+    // Production: Use MongoDB Atlas
+    $mongoClient = new MongoDB\Driver\Manager($mongodbUri);
+    $GLOBALS['mongodb'] = $mongoClient;
+    $GLOBALS['isMongoDb'] = true;
+} else {
+    // Local Development: Use MySQL
+    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+    $GLOBALS['mysql'] = $con;
+    $GLOBALS['isMongoDb'] = false;
+}
+```
+
+#### Step 6: Migrate Data Structure
+
+When using MongoDB, the user data structure will be:
+
+```javascript
+// MongoDB Document Structure
+{
+    "_id": ObjectId("..."),
+    "user_id": "USR12345",
+    "user_name": "John Doe",
+    "password": "$2y$10$hashed_password_here",
+    "created_at": ISODate("2024-01-01T00:00:00Z")
+}
+```
+
+**Collection Name**: `users` (same as MySQL table)
+
+#### Step 7: Install MongoDB PHP Extension (Local Testing)
+
+If you want to test MongoDB locally:
+
+1. Download MongoDB PHP driver from [PECL](https://pecl.php.net/package/mongodb)
+2. Add to `php.ini`:
+```ini
+extension=mongodb
+```
+3. Restart Apache
+4. Verify: `php -m | findstr mongodb`
+
+#### MongoDB vs MySQL Comparison
+
+| Feature | MySQL (Local) | MongoDB (Production) |
+|---------|---------------|---------------------|
+| **Database** | `regtest` | `travelspotph` |
+| **Storage** | Table: `users` | Collection: `users` |
+| **Connection** | `mysqli_connect()` | `MongoDB\Driver\Manager` |
+| **Queries** | SQL statements | BSON queries |
+| **Auto-increment** | `AUTO_INCREMENT` | `ObjectId` |
+| **Environment** | `ENVIRONMENT=local` or not set | `ENVIRONMENT=production` |
+
+---
+
 ## 🚀 Usage
 
 ### For Users
@@ -293,11 +410,48 @@ function showSlides() {
 ## 🔒 Security Features
 
 - **Password Hashing** - `password_hash()` with `PASSWORD_DEFAULT`
-- **SQL Injection Prevention** - Prepared statements with MySQLi
-- **Session Security** - Secure session handling
+- **SQL Injection Prevention** - Prepared statements with MySQLi (MySQL) / BSON queries (MongoDB)
+- **Session Security** - Secure session handling with HttpOnly cookies
 - **Image Protection** - Disabled right-click, drag, long-press on images
 - **XSS Prevention** - Input sanitization
 - **CSRF Protection** - Session-based verification
+- **Environment-based Configuration** - Separate local/production database configs
+
+---
+
+## 🌐 Database Switching
+
+The project automatically switches between databases based on environment:
+
+### Local Development (MySQL)
+```php
+// connection.php automatically uses MySQL when:
+// - ENVIRONMENT is not set OR
+// - ENVIRONMENT != 'production' OR  
+// - MONGODB_URI is not set
+
+$con = mysqli_connect("localhost", "root", "", "regtest");
+```
+
+### Production (MongoDB)
+```php
+// connection.php automatically uses MongoDB when:
+// - ENVIRONMENT = 'production' AND
+// - MONGODB_URI is set (from Vercel environment variables)
+
+$mongoClient = new MongoDB\Driver\Manager($mongodbUri);
+```
+
+### Check Current Database
+```php
+if ($GLOBALS['isMongoDb']) {
+    // Using MongoDB
+    echo "Connected to MongoDB Atlas";
+} else {
+    // Using MySQL
+    echo "Connected to MySQL";
+}
+```
 
 ---
 
